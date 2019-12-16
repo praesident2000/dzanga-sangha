@@ -1,0 +1,74 @@
+{
+    "key": "group_5cca9e3bd4d14",
+    "title": "Overlay Content",
+    "fields": [
+        {
+            "key": "field_5cca9ef643b05",
+            "label": "Layouts",
+            "name": "rows",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "5cca9f0544727": {
+                    "key": "5cca9f0544727",
+                    "name": "1_column",
+                    "label": "Single Column",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5cca9f8043b08",
+                            "label": "Content",
+                            "name": "column",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_5cd04fa1cb242"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Add Row",
+            "min": "",
+            "max": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "dzanga_activities"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1557156521
+}

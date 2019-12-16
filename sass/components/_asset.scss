@@ -1,0 +1,30 @@
+.asset {
+    display: flex;
+    padding-bottom: $global-layout-spacer-large;
+
+    &__icon {
+        width: 20%;
+    }
+    &__content {
+        width: 80%;
+    }
+    &__kicker {
+        font-size: $font-size-sm;
+        padding-bottom: $spacer * 0.5;
+    }
+    &__title {
+        font-size: $font-size-base * 1.5;
+        padding-bottom: $spacer * 0.5;
+    }
+    &__description {
+        padding-bottom: $spacer * 0.5;
+    }
+    &__link {
+        color: $pepper;
+        font-weight: bold;
+
+        &:hover {
+            color: $leaf;
+        }
+    }
+}

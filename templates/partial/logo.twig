@@ -1,0 +1,6 @@
+<div class="logo {% if style == "rounded" %}logo--rounded{% endif %}">
+    <a class="logo__link" href="{{ logo.link["url"] }}" target="{{ logo.link["target"] }}">
+        {% set image = TimberImage(logo.logo) %}
+        <img class="logo__image" src="{{ image.src }}" alt="{{ image.alt }}" />
+    </a>
+</div>

@@ -1,0 +1,119 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    {% set meta = post.get_field('meta') %}
+    <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+        <div class="contact-header layout__container">
+            <div class="row">
+                <div class="contact-header__meta col-12 col-md-6 offset-md-1 offset-lg-2 offset-xl-3">
+                    <div class="contact-header__kicker">{{ post.title }}</div>
+                    <h1 class="contact-header__title"> {{ meta.title }} </h1>
+                    <div class="contact-header__text">{{ meta.intro }}</div>
+                </div>
+                <div class="blob blob--2 offset-md-1 offset-lg-2 offset-xl-3"></div>
+            </div>
+        </div>
+        {# <div class="tab-section">
+            {% set contacts = post.get_field('contacts') %}
+            <div class="tab-section__buttons layout__container">
+                <div class="row">
+                    <div class="col-12 col-md-10 offset-md-1">
+                        {% for contact in contacts %}
+                            <span class="tab-section__button {% if loop.index == 1 %}active{% endif %}"
+                                  data-type="{{ contact.contact_title|lower|replace({' ':''}) }}">Contact {{ contact.contact_title }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="tab-section__tabs">
+                {% for contact in contacts %}
+                <div class="tab-section__tab tab-section__tab--{{ contact.contact_title|lower|replace({' ':''}) }} {% if loop.index == 1 %}active{% endif %} layout__container contact">
+                    <div class="row">
+                        <div class="col-12 col-md-10 offset-md-1">
+                            <div class="row">
+                                <div class="col-12 col-md-6 contact__form">
+                                    <h3 class="contact-form__title">{{ contact.form_header.title }}</h3>
+                                    <div class="contact-form__intro">{{ contact.form_header.intro }}</div>
+                                    {% include 'partial/contact_form.twig' with { form: contact.form } %}
+                                </div>
+                                <div class="col-12 col-md-5 offset-md-1 contact__meta">
+                                    {% set image = TimberImage(contact.meta.image) %}
+                                    <div class="contact__image">
+                                        <img class="" src="{{ image.src }}" alt="{{ image.alt }}"/>
+                                    </div>
+                                    <address class="contact__address">
+                                        <div class="contact__name">{{ contact.meta.name }}</div>
+                                        <div class="contact__function">{{ contact.meta.function }}</div>
+                                        <div class="contact__street">{{ contact.meta.street }}</div>
+                                        <div class="contact__city mb-4">{{ contact.meta.zip }} {{ contact.meta.city }}</div>
+                                        <div class="contact__phone">T {{ contact.meta.phone }}</div>
+                                        <div class="contact__mail">M {{ contact.meta.mail|replace({'@':'(at)'}) }}</div>
+                                    </address>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div> #}
+        {% set contacts = post.get_field('contacts') %}
+
+        <div class="tab-section layout">
+            <div class="layout__container">
+                <div class="row">
+                    <div class="col-12 col-md-10 offset-md-1">
+                        <ul class="nav nav-tabs tab-section__buttons" id="" role="tablist">
+                            {% for contact in contacts %}
+                                <li class="nav-item">
+                                    <a class="nav-link tab-section__button {% if loop.index == 1 %}active{% endif %}" id="{{ contact.contact_title|lower|replace({' ':''}) }}-tab" data-toggle="tab" href="#{{ contact.contact_title|lower|replace({' ':''}) }}" role="tab" aria-controls="{{ contact.contact_title|lower|replace({' ':''}) }}" aria-selected="true">{{ contact.contact_title }}</a>
+                                </li>
+                            {% endfor %}   
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-section__tabs">
+                {% for contact in contacts %}
+                    <div class="tab-section__tab bg-leaf fade {% if loop.index == 1 %}active{% endif %}" id="{{ contact.contact_title|lower|replace({' ':''}) }}" role="tabpanel" aria-labelledby="{{ contact.contact_title|lower|replace({' ':''}) }}-tab">
+                        <div class="layout__container">
+                            <div class="row">
+                                <div class="col-12 col-md-10 offset-md-1">
+                                    <div class="row">
+                                        <div class="col-12 col-md-6 contact__form">
+                                            <h3 class="contact-form__title">{{ contact.form_header.title }}</h3>
+                                            <div class="contact-form__intro">{{ contact.form_header.intro }}</div>
+                                            {% include 'partial/contact_form.twig' with { form: contact.form } %}
+                                        </div>
+                                        <div class="col-12 col-md-5 offset-md-1 contact__meta">
+                                            {% set image = TimberImage(contact.meta.image) %}
+                                            <div class="contact__image">
+                                                <img class="" src="{{ image.src }}" alt="{{ image.alt }}"/>
+                                            </div>
+                                            <address class="contact__address">
+                                                <div class="contact__name">{{ contact.meta.name }}</div>
+                                                <div class="contact__function">{{ contact.meta.function }}</div>
+                                                <div class="contact__street">{{ contact.meta.street }}</div>
+                                                <div class="contact__city mb-4">{{ contact.meta.zip }} {{ contact.meta.city }}</div>
+                                                <div class="contact__phone">T {{ contact.meta.phone }}</div>
+                                                <div class="contact__mail">M {{ contact.meta.mail|replace({'@':'(at)'}) }}</div>
+                                            </address>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %} 
+            </div>
+        </div>
+    </article>
+{% endblock %}
+{% block scripts %}
+    {{ parent() }}
+    {# <script src="{{ site.theme.link }}/dist/smartresize.min.js"></script> #}
+    {# <script src="{{ site.theme.link }}/dist/tabsection.min.js"></script> #}
+    <script src="{{ site.theme.link }}/dist/contact.min.js"></script>
+    <script src="{{ site.theme.link }}/dist/form.min.js"></script>
+{% endblock %}

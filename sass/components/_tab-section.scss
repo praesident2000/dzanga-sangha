@@ -1,0 +1,53 @@
+.tab-section {
+
+	&__buttons {
+		display: flex;
+		list-style-type: none;
+		padding-left: 0;
+	}
+
+	&__button {
+		color: $grass;
+		font-size: $font-size-lg;
+		padding: $spacer/2 $spacer;
+		display: inline-block;
+		transition: 450ms ease-in-out;
+		cursor: pointer;
+
+		&:hover {
+			color: $leaf;
+		}
+
+		&.active {
+			color: $leaf;
+			font-weight: bold;
+		}
+	}
+
+	&__tabs {
+		color: $white;
+		position: relative;
+		background: $leaf;
+	}
+
+	&__tab {
+		display: none;
+		margin-top: 0;
+		padding: $global-layout-spacer-large $spacer;
+
+		&.active {
+			display: block;
+			transition: opacity 450ms ease-in-out;
+			opacity: 1;
+		}
+		&:not(.active) {
+			opacity: 0;
+		}
+	}
+	input {
+		&[type="text"], &[type="email"] {
+			border-bottom: 1px solid;
+			font-size: $font-size-base;
+		}
+	}
+}

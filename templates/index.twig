@@ -1,0 +1,36 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<div class="layout-container">
+		<div class="col-12 col-xl-10 offset-xl-1">
+			<div class="related-stories stories-overview layout">
+				<div class="layout__container">
+					<div class="row">
+						<div class="col-12 col-md-6 related-stories__post">
+							<h5 class="">Stories</h5>
+						</div>
+					</div>
+				</div>
+				<div class="layout__container mt-0">
+					<div class="row related-stories__posts story-grid">
+						{% for story in 1..24 %}
+							<div class="col-12 col-md-6 related-stories__post story-grid__item
+								{% if loop.first or (loop.index - 1) % 8 == 0 or (loop.index + 2) % 8 == 0 %}story-grid__item--large
+								{% elseif (loop.index + 6) % 8 == 0 or (loop.index + 5) % 8 == 0 %}story-grid__item--medium
+								{% endif %}"
+							>
+								{{ story }}
+								{# {% include 'tease.twig' with {} %} #}
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+	{{ parent() }}
+    <script src="{{ site.theme.link }}/dist/archive.min.js"></script>
+{% endblock %}

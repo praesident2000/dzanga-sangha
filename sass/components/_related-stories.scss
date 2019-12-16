@@ -1,0 +1,25 @@
+.related-stories {
+    &__title {
+        text-align: center;
+        padding-top: $global-layout-spacer-large;
+        @media screen and (min-width: map-get($grid-breakpoints, "md")) {
+            text-align: left;
+            padding-left: $global-layout-spacer-large;
+        }
+    }
+    &__post {
+        margin-bottom: $related-gutter-width;
+    }
+    .layout-fluid, .layout__container {
+        padding-right: $related-gutter-width * 0.5;
+        padding-left:  $related-gutter-width * 0.5;
+    }
+    .row {
+        margin-right: -$related-gutter-width * 0.5;
+        margin-left:  -$related-gutter-width * 0.5;
+    }
+    [class*="col-"] {
+        padding-right: $related-gutter-width * 0.5;
+        padding-left:  $related-gutter-width * 0.5;
+    } 
+}

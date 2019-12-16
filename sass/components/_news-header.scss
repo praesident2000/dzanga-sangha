@@ -1,0 +1,27 @@
+.news-header {
+  @media screen and (min-width: map-get($grid-breakpoints, "md")) {
+    margin-top: $news-spacer-top;
+
+  }
+
+  &__date {
+    margin-bottom: $spacer;
+  }
+
+  &__kicker {
+    text-transform: uppercase;
+
+    span {
+      font-weight: bold;
+      padding-right: $spacer * 0.25;
+    }
+  }
+
+  .blob {
+    width: 380px;
+    height: 300px;
+    top: -95px;
+    left: -15%;
+    transform: rotate(-10deg);
+  }
+}

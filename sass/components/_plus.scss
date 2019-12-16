@@ -1,0 +1,27 @@
+.plus {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 4px;
+    margin-right: 8px;
+    width: 16px;
+    height: 2px;
+    background-color: currentColor;
+    transition: transform 500ms;
+  
+    &:before {
+        content: '';
+        position: absolute;
+        right: 7px;
+        top: -7px;
+        width: 2px;
+        height: 16px;
+        border-top: solid 2px currentColor;
+        border-right: solid 2px currentColor;
+    }
+    .button--is-active > & {
+        transform: rotate(180deg);
+    }
+    .button--is-active > &:before {
+        transform: rotate(90deg);
+    }
+}

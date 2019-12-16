@@ -1,0 +1,26 @@
+<div class="{{content.acf_fc_layout}}-module layout">
+    <div class="row partners">
+        {% for partner_item in content.partners %}
+            {% if partner_item.type %}
+                {% set partner = TimberPost(partner_item.partner.object).meta %}
+            {% else %}
+                {% set partner = partner_item.partner %}
+            {% endif %}
+                <div class="partner col-12 col-md-8 col-lg-4">
+                    <h5 class="partner__title">{{ partner.name }}</h5>
+                    <div class="partner__logo-container">
+                        <div class="partner__logo logo logo--partner">
+                            {% set image = TimberImage(partner.logo) %}
+                            <img class="logo__image" src="{{ image.src }}" alt="{{ image.alt }}" />
+                        </div>
+                    </div>
+                    <div class="partner__text">{{ partner.text }}</div>
+                    {% if partner_item.type %}
+                        <a class="partner__link" href="{{TimberPost(partner_item.partner.object).link}}"><i class="icon arrow-right"></i> Learn more</a>
+                    {% elseif not partner_item.type and not partner.link is empty %}
+                        <a class="partner__link" href="{{partner.link}}" target="_blank"><i class="icon arrow-right"></i> Learn more</a>
+                    {% endif %}
+                </div>
+        {% endfor %}
+    </div>
+</div>

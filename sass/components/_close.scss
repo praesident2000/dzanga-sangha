@@ -1,0 +1,39 @@
+.close {
+  position: absolute;
+  right: $spacer * 2;
+  top: 0;
+  width: 30px;
+
+  @media screen and (min-width: map-get($grid-breakpoints, "md")) {
+    right: 0;
+  }
+
+  &__inner, &__inner:after {
+    background-color: $white;
+    border-radius: 2px;
+    height: 2px;
+    position: absolute;
+    width: 30px;
+  }
+  &__inner {
+    display: block;
+    margin-top: -2px;
+    top: 50%;
+    transform: rotate(45deg);
+
+    &:after {
+      bottom: 0;
+      content: "";
+      display: block;
+      transform: rotate(-90deg);
+    }
+  }
+
+  &__text {
+    color: $white;
+    display: block;
+    font-size: $btn-font-size-lg;
+    margin-right: 40px;
+    text-align: right;
+  }
+}

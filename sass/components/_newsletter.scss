@@ -1,0 +1,40 @@
+.newsletter {
+    font-size: $font-size-base * 1.75;
+    
+    &__title {
+        font-weight: bold;
+        margin-bottom: $global-layout-spacer;
+    }
+    &__email {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid;
+        padding: $spacer 0;
+        margin-bottom: $spacer * 1.5;
+        max-width: 350px;
+        width: 100%;
+        @media screen and (min-width: map-get($grid-breakpoints, "md")) {
+            margin-bottom: $global-layout-spacer;
+            margin-right: $global-layout-spacer;
+        }
+    }
+    &__submit {
+        padding: $spacer * 0.75 $spacer * 2;
+        margin-bottom: $global-layout-spacer;
+    }
+    &__response {
+        font-size: $font-size-lg;
+
+        #mce-error-response {
+            color: $pepper;
+            margin-bottom: $global-layout-spacer;
+        }
+        #mce-success-response {
+            color: $leaf;
+            margin-bottom: $global-layout-spacer;
+        }
+    }
+    input::placeholder {
+        color: $leaf;
+    }
+}

@@ -1,0 +1,28 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    {% for post in posts %}
+        <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+            <div class="page-header page-header--facts">
+                {% set meta = post.get_field('meta') %}
+                <div class="layout__container">
+                    <div class="row">
+                        <div class="page-header__meta col-10 offset-1 col-lg-5 offset-lg-1 align-self-end">
+                            <div class="page-header__kicker"><span>{{ post.title }}</span></div>
+                            <h2 class="page-header__title">{{ meta.title }}</h2>
+                            <div class="page-header__intro">{{ meta.intro }}</div>
+                        </div>
+                        <div class="page-header__map col-12 col-lg-6">
+                            <div class="map">
+                                <div class="map__image"></div>
+                                <div class="map__pointer"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% include "layouts/layouts.twig" %}
+            {% include "partial/related_links.twig" %}
+        </article>
+    {% endfor %}
+{% endblock %}

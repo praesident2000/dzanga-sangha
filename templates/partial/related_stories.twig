@@ -1,0 +1,39 @@
+{% if post.enable_related %}
+    <div class="related-stories layout">
+        <div class="layout__container">
+            <div class="row">
+                <div class="col-12 col-md-10 offset-md-1">
+                    <h5 class="related-stories__title">{{ post.title_related }}</h5>
+                    <div class="blob blob--3"></div>
+                </div>
+            </div>
+        </div>
+        <div class="layout__container mt-2">
+            <div class="row related-stories__posts">
+                {% set related_stories = post.get_field('related_stories') %}
+                {% for related_story in related_stories %}
+                    {% set story = TimberPost(related_story.story) %}
+                    {% if loop.length == 1 %}
+                        <div class="related-stories__post col-12 col-md-10 offset-md-1">
+                            {% include 'tease.twig' with { teaser:'large' } %}
+                        </div>
+                    {% elseif loop.length == 3 %}
+                        {% if loop.first %}
+                            <div class="related-stories__post col-12 col-md-10 offset-md-1">
+                                {% include 'tease.twig' with { teaser:'large' } %}
+                            </div>
+                        {% else %}
+                            <div class="related-stories__post col-12 col-md-10 offset-md-1 col-lg-5 {% if loop.index % 2 != 0 %}offset-lg-0{% endif %}">
+                                {% include 'tease.twig' with { teaser:'large' } %}
+                            </div>
+                        {% endif %}
+                    {% else %}
+                        <div class="related-stories__post col-12 col-md-10 offset-md-1 col-lg-5 {% if loop.index % 2 == 0 %}offset-lg-0{% endif %}">
+                            {% include 'tease.twig' with { teaser:'large' } %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endif %}

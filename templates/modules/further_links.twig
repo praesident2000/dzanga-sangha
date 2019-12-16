@@ -1,0 +1,15 @@
+<div class="{{ content.acf_fc_layout }}">
+    <h5>{{ content.title }}</h5>
+    <hr>
+    <div class="further-links">
+        {% for further_link in content.links %}
+            {% set link = further_link.link %}
+            <div class="further-links__link cta cta--large">
+                <a class="cta__link" href="{{ link.url }}" target="{{ link.target }}">
+                    <div class="cta__text">{{ link.title }}</div>
+                    <i class="icon arrow-right cta__icon"></i>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>

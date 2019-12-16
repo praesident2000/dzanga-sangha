@@ -1,0 +1,115 @@
+{
+    "key": "group_5cf642960051f",
+    "title": "Latest News by Category",
+    "fields": [
+        {
+            "key": "field_5cf642aa15479",
+            "label": "Enable Latest News",
+            "name": "enable_latest",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5cf642f91547a",
+            "label": "Title Latest News",
+            "name": "title_latest",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cf642aa15479",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Latest News",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5cf643221547b",
+            "label": "News Category",
+            "name": "news_category",
+            "type": "taxonomy",
+            "instructions": "Select if you want to display only news of a certain category.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cf642aa15479",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "category",
+            "field_type": "select",
+            "allow_null": 1,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "post_template",
+                "operator": "!=",
+                "value": "page_news_stories.php"
+            },
+            {
+                "param": "post_template",
+                "operator": "!=",
+                "value": "page_contact.php"
+            },
+            {
+                "param": "post_template",
+                "operator": "!=",
+                "value": "page_assets.php"
+            }
+        ]
+    ],
+    "menu_order": 9,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1563186314
+}

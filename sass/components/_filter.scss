@@ -1,0 +1,43 @@
+.filter {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: $spacer;
+
+    &__text {
+        display: inline-block;
+        font-weight: bold;
+        font-size: $font-size-base * 1.25;
+        padding-right: $spacer;
+    }
+    &__wrapper {
+        display: inline-block;
+        position: relative;
+        padding-right: $spacer * 2;
+        transition: color 350ms;
+
+        &:hover {
+            color: $pepper;
+        }
+
+        &::after {
+            content: '';
+            transform: rotate(45deg);
+            width: 12px;
+            height: 12px;
+            border-bottom: 2px solid;
+            border-right: 2px solid;
+            right: 2px;
+            top: 2px;
+            position: absolute;
+            pointer-events: none;
+        }
+    }
+    &__select {
+        appearance: none;
+        border: none;
+        background: transparent;
+        display: inline-block;
+        font-size: $font-size-base * 1.25;
+        position: relative;
+    }
+}

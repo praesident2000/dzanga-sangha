@@ -1,0 +1,34 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="homepage-hero">
+		<div class="homepage-hero__text py-5 pt-lg-0 layout-fluid">
+			<div class="row">
+				<div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-7 offset-lg-4 col-xl-5 offset-xl-6 rellax" data-rellax-speed="3">
+					<div class="homepage-hero__logo">
+						{% set image = TimberImage(options.website_logo) %}
+						<img class="logo__image" src="{{ image.src }}" alt="{{ image.alt }}" />
+					</div>
+					<div class="homepage-hero__logo homepage-hero__logo--inverted">
+						{% set image = TimberImage(options.website_logo_inverted) %}
+						<img class="logo__image" src="{{ image.src }}" alt="{{ image.alt }}" />
+					</div>
+					<h1 class="homepage-hero__title">
+						{{ post.meta_title }}
+					</h1>
+					<div class="homepage-hero__intro">
+						{{ post.meta_intro }}
+					</div>
+					<div class="blob blob--main"></div>
+				</div>
+			</div>
+		</div>
+		<div class="homepage-hero__image rellax rellax--disable-sm" data-rellax-speed="-6">
+			{% set image = post.meta_featured_image %}
+			{% include 'partial/image_fit.twig' %}
+		</div>
+	</div>
+	{% include "layouts/layouts.twig" %}
+	
+	{% include "partial/related_stories.twig" %}
+{% endblock %}

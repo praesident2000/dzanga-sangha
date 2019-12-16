@@ -1,0 +1,12 @@
+<div class="{{ content.acf_fc_layout }}-module accordion">
+    {% for item in content.accordion %}
+        <div class="accordion__item">
+            <div class="accordion__title {% if not loop.first %}collapsed{% endif %}" data-toggle="collapse" data-target="#collapse{{ loop.index }}">
+                {{ item.title}}<div class="icon chevron chevron--small"></div>
+            </div>
+            <div class="accordion__content collapse {% if loop.first %}show{% endif %}" id="collapse{{ loop.index }}">
+                <div class="accordion__text">{{ item.text }}</div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

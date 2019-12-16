@@ -1,0 +1,116 @@
+.modal {
+
+	&.mobile-menu {
+		background: $grass;
+		.modal-close {
+			background: $grass;
+		}
+		.modal-body {
+			padding-top: $nav-bar-height + 16px;
+			padding-left: $spacer * 0.5;
+			padding-right: $spacer * 0.5;
+		}
+	}
+
+	&--leaf {
+		background: $leaf;
+		.modal-close {
+			background: $leaf;
+		}
+	}
+
+	&-backdrop {
+		// background: $leaf;
+
+		// &.show {
+		// 	opacity: 1;
+		// }
+	}
+
+	&-body {
+		padding: 0;
+		padding: $global-layout-spacer;
+
+
+		@media screen and (min-width: map-get($grid-breakpoints, "md")) {
+			margin-left: $modal-body-margin;
+			width: calc(100% - #{$nav-bar-width});
+		}
+	}
+
+	&-close {
+		background: $leaf;
+		border: none;
+		cursor: pointer;
+		display: block;
+		padding: $spacer $spacer*2;
+		position: fixed;
+		right: 0;
+		top: 0;
+		width: 100%;
+		z-index: 1000;
+
+		@media screen and (min-width: map-get($grid-breakpoints, "md")) {
+			background: transparent;
+			padding: 0;
+			right: $modal-close-spacer-right;
+			top: $modal-close-spacer-top;
+			transform: rotate(-90deg);
+			width: auto;
+		}
+	}
+
+	&-content {
+		background: transparent;
+		border: none;
+	}
+
+	&-dialog {
+		max-width: none;
+
+		@media screen and (max-width: map-get($grid-breakpoints, "sm")) {
+			margin: 0;
+		}
+	}
+
+	&-footer {
+		border: none;
+	}
+
+	&-header {
+		border: none;
+	}
+
+	.image-module__caption {
+		color: $white;
+	}
+
+	.text-module {
+
+		a {
+			color: $white;
+			text-decoration: underline;
+		}
+	}
+
+	h1, .h1,
+	h2, .h2,
+	h3, .h3,
+	h4, .h4,
+	h5, .h5,
+	h6, .h6 {
+		color: $white;
+	}
+
+	p {
+		color: $white;
+	}
+
+	.quote {
+		color: $white;
+		border-color: $white;
+	}
+	.layout {
+		margin-top: 58px;
+	}
+}

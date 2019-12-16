@@ -1,0 +1,42 @@
+.partners {
+    justify-content: center;
+}
+.partner {
+    padding-bottom: $global-layout-spacer-large;
+    &__title {
+        font-weight: bold;
+    }
+    &__logo-container {
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 1px solid $black;
+        border-bottom: 1px solid $black;
+        margin-bottom: $spacer * 2;
+    }
+    &__logo {
+        width: auto;
+        height: auto;
+        max-height: 135px;
+        max-width: 135px;
+        padding: 0;
+    }
+    &__text {
+        padding-left: $spacer * 0.5;
+        padding-right: $spacer * 0.5;
+    }
+    &__link {
+        display: block;
+        padding-left: $spacer * 0.5;
+        padding-right: $spacer * 0.5;
+        padding-top: $global-layout-spacer;
+        color: $pepper;
+        font-weight: bold;
+        font-size: $font-size-base * 1.25;
+        & .arrow-right {
+            width: 25px;
+            margin-right: $spacer * 0.5;
+        }
+    }
+}

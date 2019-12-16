@@ -1,0 +1,50 @@
+// Colors
+// 
+// now set in variables file for bootstrap
+
+@each $color, $value in $theme-colors {
+    .bg-#{$color} {
+        background-color: $value;
+    }
+}
+
+@each $color, $value in $theme-colors {
+    .text-#{$color} {
+       color: $value;
+    }
+}
+
+// Navbar
+
+$nav-bar-height: 80px;
+$nav-bar-width: 90px;
+
+//Story
+
+$story-title-height: 50vh;
+
+//News
+$news-spacer-top: 7rem;
+
+// Overlay = Modal
+
+$modal-body-margin: $nav-bar-width;
+$modal-close-spacer-top: 9rem;
+$modal-close-spacer-right: -1rem;
+
+// Typography
+
+$global-font-family-sans: 'Graphit';
+
+$welcome-font-size: 58px;
+$welcome-copy-size: 1.375rem;
+
+// Layout 
+
+$global-layout-spacer:       $spacer * 2.5;
+$global-layout-spacer-large: $spacer * 3.5;
+$global-layout-spacer-huge:  $spacer * 4.5;
+
+// Related Stories
+
+$related-gutter-width: 10px;

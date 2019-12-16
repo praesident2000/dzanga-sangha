@@ -1,0 +1,39 @@
+{
+  "name": "dzanga-sangha",
+  "version": "1.0.0",
+  "description": "dzanga-sangha theme node modules",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adrian Bahr",
+  "license": "ISC",
+  "dependencies": {
+    "animejs": "^3.0.1",
+    "bootstrap": "^4.3.1",
+    "cookieconsent": "^3.1.1",
+    "flickity": "^2.2.0",
+    "flickity-fade": "^1.0.0",
+    "flickity-imagesloaded": "^2.0.0",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-bro": "^1.0.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify": "^3.1.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglifycss": "^1.1.0",
+    "infinite-scroll": "^3.0.5",
+    "jquery": "^3.3.1",
+    "js-cookie": "^2.2.0",
+    "lazyframe": "^1.1.6",
+    "lozad": "^1.9.0",
+    "normalize.scss": "^0.1.0",
+    "popper.js": "^1.14.7",
+    "rellax": "^1.9.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}

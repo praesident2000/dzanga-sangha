@@ -1,0 +1,150 @@
+.story-slider {
+	position: relative;
+	z-index: +1;
+	margin-top: -2.5rem;
+
+	&.col-12 {
+
+		@media screen and (max-width: map-get($grid-breakpoints, "lg")) {
+			padding-right: 0;
+			padding-left: 0;
+			margin-bottom: $spacer*2;
+		}
+	}
+
+	.blob {
+		z-index: -1;
+		width: 210px;
+		height: 210px;
+		left: 0;
+		top: auto;
+		bottom: 0;
+		transform: translate(0, 0) rotate(-15deg);
+		display: block;
+
+		@media screen and (min-width: map-get($grid-breakpoints, "md")) {
+			width: 300px;
+			height: 340px;
+		}
+
+		@media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+			left: -30%;
+			width: 300px;
+			height: 340px;
+			transform: translate(0, 0) rotate(122deg);
+		}
+	}
+
+	&__container {
+		height: 480px;
+		margin-bottom: 18px;
+
+		.flickity-slider {
+			transform: none !important;
+		}
+		
+		@media screen and (min-width: map-get($grid-breakpoints, "md")) {
+			height: 100vh;
+			position: relative;
+			margin-bottom: none;
+		}
+	}
+
+	&__item {
+		height: 100%;
+		width: 100%;
+		left: 0 !important;
+		opacity: 0;
+		transition: opacity 1s ease-in-out;
+		z-index: -1;
+
+		@media screen and (min-width: map-get($grid-breakpoints, "md")) {
+			height: 100vh;
+		}
+		&.is-selected {
+			opacity: 1;
+			z-index: 0
+		}
+	}
+
+	&__image {
+		margin-bottom: $spacer;
+		height: 300px;
+
+		@media screen and (min-width: map-get($grid-breakpoints, "md")) {
+			height: 75%;
+		}
+		@media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+			height: 100%;
+		}
+	}
+
+	&__meta {
+		padding-left: $spacer;
+		padding-right: $spacer;
+
+		@media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+			z-index: +2;
+			position: absolute;
+			left: 80%;
+			top: 0;
+			width: 100%;
+			max-width: 400px;
+			height: $story-title-height;
+		}
+	}
+	&__kicker {
+		text-transform: uppercase;
+		font-size: $font-size-sm;
+	}
+
+	&__meta-wrap {
+		@media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
+	}
+
+	.flickity-page-dots {
+		bottom: -32px;
+
+		.dot {
+			width: 18px;
+			height: 18px;
+			background: transparent;
+			border: 1px solid $black;
+			border-radius: 50%;
+			opacity: 1;
+
+			&::after {
+				content: "";
+				display: block;
+				width: 10px;
+				height: 10px;
+				margin: 3px;
+				background: $black;
+				border-radius: 50%;
+				opacity: 0;
+				transition: opacity 400ms;
+			}
+			&.is-selected::after {
+				opacity: 1;
+			}
+		}
+		@media screen and (min-width: map-get($grid-breakpoints, "md")) {
+			bottom: 42px;
+		}
+		@media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+			display: none
+		}
+	}
+
+	.flickity-viewport {
+
+		@media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+			overflow: visible;
+			height: 100vh;
+		}
+	}
+}

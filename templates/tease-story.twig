@@ -1,0 +1,13 @@
+<div class="story-grid__item {{ class}}
+    {% if loop.first or (loop.index - 1) % 8 == 0 or (loop.index + 2) % 8 == 0 %}story-grid__item--large
+    {% elseif (loop.index + 6) % 8 == 0 or (loop.index + 5) % 8 == 0 %}story-grid__item--medium
+    {% endif %}
+">
+    <a href="{{ story.link }}" class="story-grid__link">
+        {% set meta = story.get_field('meta') %}
+        {% set kickertxt = story.category %}
+        {% include 'partial/image_fit.twig' with { image: meta.featured_image } %}
+        <div class="story-grid__kicker">Story | {{ kickertxt }}</div>
+        <h5 class="story-grid__title">{{ story.title }}</h5>
+    </a>
+</div>

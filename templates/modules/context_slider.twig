@@ -1,0 +1,32 @@
+{% for slide in content.slides %}
+    {% set overlay = slide.overlay %}
+    {% include 'modules/modal.twig' with { overlay:overlay, id:overlay.id } %}
+{% endfor %}
+
+<div class="{{content.acf_fc_layout}}-module layout">
+    <div class="main-carousel context-slider" data-flickity='{ "cellAlign": "center", "wrapAround": true, "setGallerySize": false }'>
+    {% for slide in content.slides %}
+        <div class="carousel-cell context-slider__cell col-12 col-md-10 col-lg-8">
+            <div class="context-slider__content">
+                {% if slide.type %}
+                    {% set overlay = slide.overlay %}
+                    <a class="context-slider__link col-10 col-lg-8" data-toggle="modal" data-target="#modal-{{ overlay.id }}"><h2 class="context-slider__title">{{ slide.title }}</h2></a>
+                    {% include 'modules/modal.twig' with { overlay:overlay, id:overlay.id } %}
+                {% else %}
+                    <a href="{{ slide.link }}" class="context-slider__link col-10 col-lg-8"><h2 class="context-slider__title">{{ slide.title }}</h2></a>
+                {% endif %}
+
+                <div class="context-slider__text col-10 col-lg-8">{{ slide.text }}</div>
+
+                {% if slide.type %}
+                    <a class="context-slider__link col-8" data-toggle="modal" data-target="#modal-{{ overlay.id }}"><i class="icon arrow-right cta__icon"></i> {{ slide.label }}</a>
+                {% else %}
+                    <a href="{{ slide.link }}" class="context-slider__link col-8"><i class="icon arrow-right cta__icon"></i> {{ slide.label }}</a>
+                {% endif %}
+            </div>
+            {% set image = slide.image %}
+            {% include 'partial/image_fit.twig' with { overlay: true } %}
+        </div>
+    {% endfor %}
+    </div>
+</div>

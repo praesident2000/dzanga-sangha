@@ -1,0 +1,19 @@
+.maintenance {   
+    height: 400px;
+    min-height: 100vh;
+    @media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+        margin-left: -$nav-bar-width; 
+    }
+    &__content {
+        position: absolute;
+        z-index: 1;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        background: rgba($leaf,0.33);
+        color: $white;
+        text-align: center;
+    }
+}

@@ -1,0 +1,19 @@
+.news-grid {
+
+  &__date {
+    font-size: $font-size-sm;
+    margin-bottom: $spacer/2;
+  }
+
+  &__intro {
+    font-size: $font-size-sm;
+  }
+
+  &__item {
+    margin-bottom: $spacer;
+  }
+
+  &__title {
+    margin-bottom: $spacer/2;
+  }
+}

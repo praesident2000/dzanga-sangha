@@ -1,0 +1,6 @@
+.video {
+    &__frame.lazyframe[data-vendor="youtube"] {
+        background-color: $orange;
+        font-family: $global-font-family-sans;
+    }
+}

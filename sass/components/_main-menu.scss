@@ -1,0 +1,61 @@
+.main-menu {
+    list-style-type: none;
+    padding-left: 0;
+
+    &__item {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: $spacer * 2;
+        text-align: center;
+
+        & .menu__list {
+            max-height: 0px;
+            overflow: hidden;
+            transition: max-height 500ms ease-in-out;
+        }
+
+        &:hover .menu__list, &.touched .menu__list{
+            max-height: 500px;
+        }
+
+        & .menu__item {
+            font-weight: normal;
+        }
+        &:hover .main-menu__link, &.touched .main-menu__link {
+            color: $leaf;
+        }
+        @media screen and (min-width: map-get($grid-breakpoints, "md")) {
+            font-size: 36px;
+            text-align: left;
+        }
+    }
+    &__link {
+
+    }
+    .chevron {
+        display: inline-block;
+    }
+}
+.mobile-menu {
+    .main-menu {
+    
+        &__item {
+    
+            & .menu__list {
+                max-height: 0px;
+                overflow: hidden;
+                transition: max-height 500ms ease-in-out;
+            }
+
+            &.touched .menu__list {
+                max-height: 500px;
+            }
+    
+            & .menu__item {
+                font-weight: normal;
+                padding-top: $spacer * 0.5;
+                padding-bottom: $spacer * 0.5;
+            }
+        }
+    }
+}

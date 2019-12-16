@@ -1,0 +1,13 @@
+{% if not content.style %}
+    <div class="{{ content.acf_fc_layout }}-module cta {% if size == "large" %}cta--large{% endif %}">
+        <a class="cta__link" href="{{ link.url }}" target="{{ link.target }}">
+            <div class="cta__text">{{ link.title }}</div>
+            <i class="icon arrow-right cta__icon"></i>
+        </a>
+    </div>
+{% else %}
+    <a href="{{ link.url }}" target="{{ link.target }}" class="{{ content.acf_fc_layout }}-module button {% if post.type != 'post' %}button--pepper {% endif %}button__link button--icon">
+        <i class="icon arrow-right arrow--short"></i>
+        <div class="button__text">{{ link.title }}</div>
+    </a>
+{% endif %}

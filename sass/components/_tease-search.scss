@@ -1,0 +1,17 @@
+.tease-search {
+    &__title {
+        margin-top: $spacer * 0.5;
+        margin-bottom: $spacer * 1.5;
+    }
+    &__type {
+        text-transform: uppercase;
+    }
+    &__link {
+        font-weight: bold;
+        color: $pepper;
+
+        &:hover {
+            color: $black;
+        }
+    }
+}

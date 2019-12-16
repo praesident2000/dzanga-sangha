@@ -1,0 +1,56 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    {% set meta = post.get_field('meta') %}
+    <article class="post-type-{{ post.post_type }} news" id="post-{{ post.ID }}">
+        <div class="layout">
+            <div class="layout__container">
+                <div class="row">
+                    <div class="news-header col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
+                        <div class="news-header__meta">
+                            <div class="news-header__kicker"><span>{{ post.type.labels.singular_name }}</span> {{ post.terms('category')|join('| ') }}</div>
+                            <h2 class="news-header__title">{{ meta.title }}</h2>
+                            <div class="news-header__date">{{ post.date("d.m.Y") }}</div>
+                            <div class="news-header__intro">{{ meta.intro }}</div>
+                            <div class="blob blob--4"></div> {# rellax scrolling? #}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% if meta.featured_image %}
+                <div class="layout__container">
+                    <div class="row">
+                        <div class="layout__column-with-margin col-12 col-md-10 offset-md-1">
+                            {% set image = meta.featured_image %}
+                            {% include 'modules/image.twig' with { } %}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+        {% include "layouts/layout_news.twig" %}
+        <div class="layout">
+            <div class="layout__container">
+                <div class="row">
+                    <div class="social social--inline col-12 col-md-8 offset-md-2">
+                        <h5 class="social__title">Spread The Word</h5>
+                        {% include "partial/share.twig" with {class: 'share--inline'} %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layout">
+            <div class="layout__container">
+                <div class="row">
+                    <div class="col-12 col-md-10 offset-md-1">
+                        {% include 'partial/news-grid.twig' with { colclass: 'col-10 offset-1 col-md-4 offset-md-0', title: 'More News'} %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+{% endblock %}
+{% block scripts %}
+    {{ parent() }}
+    <script src="{{ site.theme.link }}/dist/archive.min.js"></script>
+{% endblock %}

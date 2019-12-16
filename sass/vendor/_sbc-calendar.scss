@@ -1,0 +1,113 @@
+.booking {
+    .sbc-title {
+        text-align: center;
+        font-size: 22px;
+    }
+    #sbc-calendar {
+        display: flex;
+        float: none;
+        margin: 0;
+
+        form {
+            display: flex;
+            justify-content: center;
+        }
+        .sbc-navigation {
+            select {
+                font-size: 22px;
+                border: none;
+                background: transparent;
+                font-family: $global-font-family-sans;
+            }
+        }
+    }
+    #sbc-calendar-wrapper {
+        table {
+            thead {
+                th {
+                    color: #707070;
+                    font-family: unset;
+                    font-size: 12px;
+                    text-align: left;
+                    padding-left: $spacer * 0.5;
+                }
+            }
+            tr {
+                td {
+                    border: 0;
+                    padding-left: $spacer * 0.5;
+                    line-height: 25px;
+                    vertical-align: top;
+                    height: 56px;
+                    text-align: left;
+                    font-weight: bold;
+                }
+                .pad {
+                    text-align: center;
+                }
+            }
+            tfoot {
+                tr {
+                    &:first-child {
+                        position: absolute;
+                        top: 50%;
+                        width: 100%;
+                        .pad {
+                            display: block;
+                            margin-right: 30px;
+                            .sbc-loader {
+                                background: $pepper;
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .sbc-status-free {
+            background-color: $white;
+        }.sbc-status-booked {
+            background-color: rgba($pepper,0.4);
+        }
+    }
+    .sbc-calendar-month {
+        float: none;
+        position: relative;
+        padding: 10px;
+        width: 100%;
+        border: none;
+        background-color: transparent;
+        margin-right: 0px;
+    }
+    table {
+        width: 100%;
+    }
+    .sbc-next-month, .sbc-prev-month {
+        font-family: $global-font-family-sans;
+        font-size: $font-size-base * 0.875;
+    }
+    // .sbc-next-month {
+    //     right: 24px;
+    //     &::after {
+    //         content: '';
+    //         display: inline-block;
+    //         border-top: 2px solid;
+    //         border-left: 2px solid;
+    //         border-radius: 2px;
+    //     }
+    // }
+    // .sbc-prev-month {
+    //     left: 24px;
+    // }
+    &__legend {
+        &__circle {
+            display: inline-block;
+            width: $spacer;
+            height: $spacer;
+            border-radius: 50%;
+            background-color: rgba($pepper,0.4);
+            margin-right: $spacer * 0.5;
+            margin-bottom: -2px;
+        }
+    }
+}

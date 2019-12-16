@@ -1,0 +1,99 @@
+.testimonials {
+    height: 380px;
+    
+    &-module {
+        padding-bottom: $spacer * 2;
+    }
+
+    &__cell {
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: opacity 900ms ease-out;
+        &.is-selected {
+            opacity: 1;
+        }
+    }
+
+    &__image-column {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__image {
+        position: relative;
+        height: 150px;
+        width: 150px;
+
+        .image-fit {
+            border-radius: 50%;
+        }
+    }
+
+    &__text-column {
+        height: 100%;
+        padding-top: $spacer;
+    }
+    
+    &__text {
+        font-size: 18px;
+        padding-bottom: $spacer;
+        padding-top: $spacer;
+    }
+
+    .image-fit__copyright {
+        display: none;
+    }
+
+    @media screen and (min-width: map-get($grid-breakpoints, "md")) {
+        height: 200px;
+
+        &__image-column {
+            height: 100%;
+        }
+
+        &__text {
+            font-size: 22px;
+            padding-top: 0;
+        }
+    }
+
+    @media screen and (min-width: map-get($grid-breakpoints, "xl")) {
+
+        height: 240px;
+
+        &__image {
+            height: 180px;
+            width: 180px;
+        }
+        &__text {
+            font-size: 28px;
+        }
+    }
+
+    .flickity-page-dots {
+        bottom: -28px;
+        .dot {
+            width: 18px;
+            height: 18px;
+            background-color: transparent;
+            border: 1px solid;
+            opacity: 1;
+            transition: background-color 500ms ease-out;
+
+            &.is-selected {
+                background-color: $black;
+            }
+        }
+    }
+
+    .bg-leaf & {
+        .flickity-page-dots {
+            .dot {
+                &.is-selected {
+                    background-color: $white;
+                }
+            }
+        }
+    }
+}

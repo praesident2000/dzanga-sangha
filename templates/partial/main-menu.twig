@@ -1,0 +1,36 @@
+<div class="layout-fluid">
+    <ul class="main-menu">
+        {% set menu = main_menu.get_items %}
+        {% for item in menu %}
+            <li class="main-menu__item {{ item.classes | join(' ') }}">
+                <a class="main-menu__link" target="{{ item.target }}" href="{{ item.link }}">
+                    {{ item.title }}
+                    {% if item.get_children %}
+                        <i class="icon chevron"></i>
+                    {% endif %}
+                </a>
+                {% include "menu.twig" with {'menu': item.get_children} %}
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-10">
+            <div class="meta-menu menu">
+                {% include "menu.twig" with { 'menu': meta_menu.get_items } %}
+            </div>
+            <div class="legal-menu menu">
+                {% include "menu.twig" with { 'menu': legal_menu.get_items } %}
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-10">{% include 'partial/language_switcher.twig' with {} %}</div>
+        <form class="col-lg-8 col-md-10" role="search" method="get" action="{{ site.url }}">
+            <div class="search-form">
+                <input id="search" name="s" class="search-form__input col-7 text-center" type="text"
+                    value="{{ function('get_search_query') }}" autocomplete="off" placeholder="{{ translations.search }}"/>
+                <div class="col-5 pt-1">
+                    <button id="submit-search" class="search-form__submit" type="submit" value=""><i class="magnifier"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

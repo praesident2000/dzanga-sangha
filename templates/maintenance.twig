@@ -1,0 +1,19 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div class="maintenance homepage-hero">
+        <div class="maintenance__content">
+            <div class="col-10 offset-1">
+                <h1>{{ site.title }}</h1>
+                <h5>{{ site.description }}</h5>
+            </div>
+            <div class="col-10 offset-1 layout">
+                <h2>{{ options.maintenance_title }}</h2>
+            </div>
+        </div>
+		<div class="homepage-hero__image rellax" data-rellax-speed="-7">
+			{% set image = options.maintenance_image %}
+			{% include 'partial/image_fit.twig' %}
+		</div>
+	</div>
+{% endblock %}

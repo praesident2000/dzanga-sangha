@@ -1,0 +1,14 @@
+{% set image = TimberImage(image) %}
+{% set focus_point = image.get_field('focus_point') %}
+{% set copyright = image.get_field('copyright') %}
+<div class="image-fluid">
+    <img
+        class="image-fluid__image lozad"
+        {# TO DO check if different srcset option for header images is needed #}
+        data-src="{{ image.src }}"
+        data-srcset="{{ image.src("medium") }} 320w,{{ image.src("medium_large") }} 768w,{{ image.src("large") }} 1024w,{{ image.src }} 1600w"
+        alt="{{ image.alt }}"
+    />
+    {% if overlay %}<div class="image-fluid__overlay"></div>{% endif %}
+    {% if copyright %}<div class="image-fluid__copyright">{{ copyright }}</div>{% endif %}
+</div>

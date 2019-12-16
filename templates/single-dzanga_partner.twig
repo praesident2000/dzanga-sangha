@@ -1,0 +1,23 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	{% set meta = post.get_field('meta') %}
+
+	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+		<div class="partner-header layout__container">
+			<div class="partner-header__meta row">
+				<div class="partner-header__kicker col-8 offset-md-1 offset-lg-2 offset-xl-3"><h6 class="partner-header__type">{{ post.get_post_type.label }}</h6> | {{ post.title }}</div>
+				<h1 class="partner-header__title col-8 offset-md-1 offset-lg-2 offset-xl-3"> {{ meta.name }} </h1>
+				<div class="partner-header__logo col-4 col-md-2 offset-md-1 order-md-last">
+					<div class="logo">
+						{% set image = TimberImage(meta.logo) %}
+						<img class="logo__image" src="{{ image.src }}" alt="{{ image.alt }}" />
+					</div>
+				</div>
+				<div class="partner-header__intro col-12 col-md-6 offset-md-1 offset-lg-2 offset-xl-3">{{ meta.text }}</div>
+				<div class="blob blob--2 offset-md-1 offset-lg-2 offset-xl-3"></div>
+			</div>
+		</div>
+		{% include "layouts/layouts.twig" %}
+	</article>
+{% endblock %}

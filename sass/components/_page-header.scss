@@ -1,0 +1,202 @@
+%page-header-with-image {
+
+	@media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+		min-height: 100vh;
+		position: relative;
+	}
+
+	& .page-header__image {
+		width: 100%;
+
+		@media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+			min-height: 100vh;
+		}
+	}
+
+	& .page-header__meta {
+		padding-top: $spacer;
+		position: relative;
+		padding-left: $spacer * 2;
+		padding-right: $spacer * 2;
+
+		@media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+			align-self: flex-end;
+			padding-top: 0;
+			padding-bottom: $global-layout-spacer-huge;
+			padding-left: $spacer;
+			padding-right: $spacer;
+		}
+	}
+
+  .image-fit {
+		@media screen and (max-width: map-get($grid-breakpoints, "lg")) {
+			z-index: -2;
+		}
+	}
+
+}
+
+.page-header {
+	overflow: hidden;
+	padding-left: $spacer;
+	padding-right: $spacer;
+
+	&__kicker {
+		text-transform: uppercase;
+		margin-bottom: $spacer * 0.5;
+	}
+
+	&__title {
+		font-size: 42px;
+		@media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+			font-size: 52px;
+			line-height: 62px;
+		}
+		@media screen and (min-width: map-get($grid-breakpoints, "xl")) {
+			font-size: 65px;
+			line-height: 75px;
+		}
+	}
+
+	.image-fit__copyright {
+
+		@media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+		display: none;
+		}
+	}
+
+	&--standard {
+		@extend %page-header-with-image;
+
+		& .page-header__meta {
+			@media screen and (min-width: 1705px) {
+				
+				& > * {
+					width: 635px;
+				}
+			}	
+		}
+	}
+
+	&--alternative {
+
+		@extend %page-header-with-image;
+
+		& .page-header__image {
+			.image-fit--clipmask .image-fit__image {
+				@media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+				mask-position: left;
+				}
+			}
+
+			@media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+				overflow: hidden;
+				order: 2;
+			}
+		}
+
+		& .page-header__meta {
+
+			@media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+				order: 1;
+			}
+
+			// keep elements in grid with .layout__container items, without restricting page-header size
+			@media screen and (min-width: 1705px) {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: flex-end;
+				
+				& > * {
+					width: 635px;
+				}
+			}
+		}
+
+		.image-fit--clipmask {
+
+			@media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+				right: auto;
+				left: 0;
+			}
+		}
+
+		.blob {
+			@media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+				transform: translate(30%, -60%) rotate(-15deg);
+				left: 15%;
+			}
+		}
+	}
+
+	&--story-slider {
+
+		.news-grid {
+
+			@media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+				margin-top: $story-title-height;
+			}
+		}
+	}
+
+	&--facts {
+
+		@media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+			height: 100vh;
+			position: relative;
+		}
+
+		& .page-header__meta {
+			order: 2;
+
+			@media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+				order: 1;
+				margin-bottom: $spacer*3;
+			}
+
+		}
+
+		& .page-header__map {
+			order: 1;
+			margin-bottom: $spacer*2;
+
+			@media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+				margin-bottom: 0;
+				order: 2;
+				height: 100vh;
+				position: relative;
+			}
+		}
+
+		& + .layout.layout--divider {
+
+			@media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+				margin-top: 0;
+			}
+		}
+	}
+
+	&--no-image {
+
+		&.layout__container {
+			margin-top: $nav-bar-height;
+
+				@media screen and (min-width: map-get($grid-breakpoints, "md")) {
+					margin-top: 0;
+				}
+			}
+
+		& .page-header__meta {
+
+			padding-top: $spacer * 1.5;
+			padding-bottom: $spacer * 1.5;
+			margin-top: $spacer * 1.5;
+			margin-bottom: $spacer * 1.5;
+
+			@media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+				padding-top: $global-layout-spacer-huge;
+				margin-top: $global-layout-spacer-huge;
+			}
+		}
+  	}
+}

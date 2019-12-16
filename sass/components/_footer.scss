@@ -1,0 +1,20 @@
+#footer {
+    background: $elefant;
+}
+.footer {
+    margin-top: $global-layout-spacer;
+    &__main {
+        padding-top: $spacer * 3.75;
+        padding-bottom: $spacer * 2;
+        color: $leaf;
+    }
+    &__partners {
+    }
+    &__hr, & &__hr {
+        border-top: 1px solid #a5a5a5;
+        margin-bottom: $spacer * 2;
+    }
+    @media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+        margin-top: $global-layout-spacer-large;
+    }
+}

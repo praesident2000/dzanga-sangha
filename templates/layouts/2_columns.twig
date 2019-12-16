@@ -1,0 +1,40 @@
+<div class="layout layout--{{row.acf_fc_layout}} bg-{{ row.background }}">
+    <div class="layout__container">
+        <div class="row">
+            <div class="layout__column1-2 col-12 col-md-6 col-lg-5 offset-lg-1">
+                {% for content in row.column_1_content_2_columns %}
+                    {% if     content.acf_fc_layout == 'accordion' %}
+                        {% include 'modules/accordion.twig' with {} %}
+                    {% elseif content.acf_fc_layout == 'call_to_action' %}
+                        {% include 'modules/call_to_action.twig' with { link:content.link } %}
+                    {% elseif content.acf_fc_layout == 'image' %}
+                        {% include 'modules/image.twig' with { image: content.image, caption: content.caption } %}
+                    {% elseif content.acf_fc_layout == 'quote' %}
+                        {% include 'modules/quote.twig' with {} %}
+                    {% elseif content.acf_fc_layout == 'read_more' %}
+                        {% include 'modules/read_more.twig' with {} %}
+                    {% elseif content.acf_fc_layout == 'text' %}
+                        {% include 'modules/text.twig' with {} %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="layout__column2-2 col-12 col-md-6 col-lg-5">
+                {% for content in row.column_2_content_2_columns %}
+                    {% if     content.acf_fc_layout == 'accordion' %}
+                        {% include 'modules/accordion.twig' with {} %}
+                    {% elseif content.acf_fc_layout == 'call_to_action' %}
+                        {% include 'modules/call_to_action.twig' with { link:content.link } %}
+                    {% elseif content.acf_fc_layout == 'image' %}
+                        {% include 'modules/image.twig' with { image: content.image, caption: content.caption } %}
+                    {% elseif content.acf_fc_layout == 'quote' %}
+                        {% include 'modules/quote.twig' with {} %}
+                    {% elseif content.acf_fc_layout == 'read_more' %}
+                        {% include 'modules/read_more.twig' with {} %}
+                    {% elseif content.acf_fc_layout == 'text' %}
+                        {% include 'modules/text.twig' with {} %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

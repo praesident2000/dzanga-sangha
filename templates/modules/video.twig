@@ -1,0 +1,9 @@
+{% set placeholder = TimberImage(video.placeholder) %}
+<div class="{{content.acf_fc_layout}}-module video">
+    <div
+        class="lazyframe lozad video__frame"
+        data-vendor="youtube"
+        data-background-image="{{ placeholder.src("large") }}"
+        data-src="{{ video.url }}">
+    </div>
+</div>

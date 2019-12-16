@@ -1,0 +1,10 @@
+<div class="{{content.acf_fc_layout}}-module layout">
+    <div class="main-carousel image-slider" data-flickity='{ "cellAlign": "center", "wrapAround": true, "pageDots": false }'>
+    {% for slide in content.slides %}
+        <div class="carousel-cell image-slider__cell col-12 col-lg-8">
+            {% set image = slide.image %}
+            {% include 'partial/image_fit.twig' with {} %}
+        </div>
+    {% endfor %}
+    </div>
+</div>

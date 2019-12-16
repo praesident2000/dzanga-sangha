@@ -1,0 +1,97 @@
+%container-fluid {
+    width: 100%;
+    padding-right: $grid-gutter-width * .5;
+    padding-left: $grid-gutter-width * .5;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.layout-fluid {
+    @extend %container-fluid;
+
+    // TO-DO: Check desired layout nesting styles
+    & > & {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+.layout {
+    margin-top: $global-layout-spacer;
+
+    &__container {
+        @extend %container-fluid;
+        margin-top: $global-layout-spacer;
+        max-width: 1600px;
+        &:first-child {
+            margin-top: 0;
+        }
+        &--full {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    &__column1-2 > * {
+        margin-top: $global-layout-spacer;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    &__column2-2 {
+        margin-top: $global-layout-spacer;
+
+        & > * {
+            margin-top: $global-layout-spacer;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+
+        @media screen and (min-width: map-get($grid-breakpoints, "md")) {
+            margin-top: 0;
+        }
+    }
+    &__column-with-margin > * {
+        margin-top: $global-layout-spacer;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    &__margin-column {
+        margin-top: $global-layout-spacer;
+        
+        & > * {
+            margin-top: $global-layout-spacer;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+
+        @media screen and (min-width: map-get($grid-breakpoints, "md")) {
+            margin-top: 0;
+        }
+    }
+    & + .bg-elefant, & + .bg-leaf {
+        padding-top: $global-layout-spacer;
+        padding-bottom: $global-layout-spacer;
+    }
+    & .bg-leaf, &.bg-leaf {
+        color: $white;
+    }
+    @media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+        margin-top: $global-layout-spacer-large;
+
+        &__container {
+            margin-top: $global-layout-spacer-large;
+        }
+        &__column1-2 > * {
+            margin-top: $global-layout-spacer-large;
+        }
+        &__column2-2 > * {
+            margin-top: $global-layout-spacer-large;
+        }
+        & + .bg-elefant, & + .bg-leaf {
+            padding-top: $global-layout-spacer-huge;
+            padding-bottom: $global-layout-spacer-huge;
+        }
+    }
+}

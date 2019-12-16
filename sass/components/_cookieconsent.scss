@@ -1,0 +1,50 @@
+.cc-window {
+    z-index: 999;
+}
+
+.cc-banner, .cc-floating {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: fixed;
+    background-color: $elefant;    
+    box-shadow: 0px 5px 15px rgba($black, 0.75);
+    font-family: $global-font-family-sans;
+    padding: $spacer * 2;
+    width: 100%;
+
+    &.cc-bottom {
+        left: auto;
+        right: 0;
+        bottom: 0;
+    }
+
+    .cc-link {
+        text-decoration: none;
+        color: $leaf;
+
+        &:hover {
+            color: $pepper;
+        }
+    }
+
+    .cc-message {
+        margin-bottom: $spacer * 2;
+    }
+    @media screen and (min-width: map-get($grid-breakpoints, "md")) {
+        justify-content: space-between; 
+        width: calc(100% - #{$nav-bar-width});
+
+        .cc-message {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.cc-btn {
+    text-transform: uppercase;
+}
+
+.cc-revoke {
+    display: none;
+}

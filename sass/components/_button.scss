@@ -1,0 +1,63 @@
+.button {
+    background: transparent;
+    border: 2px solid;
+    border-radius: $rounded-pill;
+    outline: 0px solid transparent;
+    border-color: $pepper;
+    color: $pepper;
+    font-weight: bold;
+    padding: $spacer * 0.75 $spacer;
+    transition: color .5s, background-color .5s, border-color .5s;
+
+    &__link {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    &:hover, &--is-active {
+        background: $pepper;
+        color: $white;
+    }
+    &--white, .bg-leaf &, .bg-pepper & {
+        color: $white;
+        &:hover, &.button--is-active {
+            border-color: $white;
+            background: $white;
+            color: $leaf;
+        }
+    }
+    &--white {
+        border-color: $white;
+    }
+    &--pepper {
+        background: $pepper;
+        color: $white;
+        &:hover, &.button--is-active {
+            background: $white;
+            color: $pepper;
+        }
+    }
+    &--leaf {
+        color: $leaf;
+        border-color: $leaf;
+        &:hover, &.button--is-active {
+            background: $leaf;
+            color: $white;
+        }
+    }
+    &--large {
+        font-size: $font-size-lg; 
+    }
+
+    &--icon {
+        .button__text {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        .icon {
+            margin-right: 0;
+        }
+    }
+    
+}

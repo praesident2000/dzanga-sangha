@@ -1,0 +1,15 @@
+<div class="modal modal--leaf fade" id="modal-{{ id }}" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+        <i class="icon close">
+            <div class="close__inner"></div>
+        </i>
+        <span class="close__text">Go Back</span>
+    </button>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                {% include "layouts/layout_overlay.twig" with {post:overlay} %}
+            </div>
+        </div>
+    </div>
+</div>

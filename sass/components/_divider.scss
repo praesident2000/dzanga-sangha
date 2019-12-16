@@ -1,0 +1,34 @@
+.divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    &__text {
+        color: $white;
+        font-size: 32px;
+        padding-top: 150px;
+        padding-bottom: 150px;
+        text-align: center;
+        z-index: 1;
+        &--not-empty {
+            background: rgba($black,0.25);
+            transition: background-color 750ms;
+            &:hover {
+                background: rgba($pepper,0.75);
+            }
+        }
+        p {
+            transition: transform 750ms;
+            .divider:hover & {
+                transform: scale(1.1);
+            }
+        }
+    }
+    @media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+        &__text {
+            font-size: 50px;
+            padding-top: 200px;
+            padding-bottom: 200px;
+        }
+    }
+}

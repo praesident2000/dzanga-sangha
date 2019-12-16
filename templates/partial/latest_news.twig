@@ -1,0 +1,19 @@
+{% if post.enable_latest %}
+    <div class="latest-news layout">
+        <div class="layout__container">
+            <div class="row">
+                <div class="col-12 col-md-10 offset-md-1">
+                    <h5 class="latest-news__title">{{ post.title_latest }}</h5>
+                
+                    <div class="latest-news__posts row layout">
+                        {% for news in latest_news %}
+                            <div class="col-12 col-md-10 {% if not loop.first %}offset-md-1{% endif %} col-lg-3">
+                                {% include "tease-news.twig" %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}

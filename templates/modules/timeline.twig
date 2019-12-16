@@ -1,0 +1,22 @@
+<div class="{{content.acf_fc_layout}}-module">
+    <div class="main-carousel timeline {% if content.image %}timeline--bg-image{% endif %}" data-flickity='{ "cellAlign": "left", "prevNextButtons": false, "dragThreshold": 10, "setGallerySize": false }'>
+    {% for date in content.timeline %}
+        <div class="carousel-cell timeline__cell col-10 offset-1 col-md-6 col-xl-3">
+            
+            <div class="timeline__date"><span>{{ date.date }}</span></div>
+            <div class="timeline__content">
+                <h5 class="timeline__title">
+                    {{ date.title }}
+                </h5>
+                <div class="timeline__text">
+                    {{ date.text }}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+    {% if content.image %}
+        {% set image = content.image %}
+        {% include 'partial/image_fit.twig' with { overlay: true } %}
+    {% endif %}
+</div>

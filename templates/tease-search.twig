@@ -1,0 +1,16 @@
+<div class="tease-search">
+	<div class="tease-search__kicker">
+		<span class="tease-search__type">{{ post.type.labels.singular_name }}</span>
+		{% if post.type == "post" %}&mdash; {{ post.date }}{% endif %}
+	</div>
+	<h2 class="tease-search__title">
+		{% if post.meta.title %}
+			{{ post.meta.title }}
+		{% elseif post.meta.name %}
+			{{ post.meta.name }}
+		{% else %}
+			{{post.title}}
+		{% endif %}
+	</h2>
+	<a class="tease-search__link" href="{{ post.link }}">Read More</a>
+</div>

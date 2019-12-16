@@ -1,0 +1,59 @@
+<div class="footer__main layout">
+    <div class="layout__container">
+        <div class="row">
+            {% if options.newsletter_active %}
+                <div class="col-12 col-md-10 offset-md-1 col-xl-6">
+                    {% include "partial/newsletter_form.twig" with {} %}
+                </div>
+            {% endif %}
+            <div class="col-6 col-md-5 offset-md-1 col-xl-2 {% if options.newsletter_active %}offset-xl-0{% endif %}">
+                <div class="meta-menu menu">
+                    {% include "menu.twig" with { 'menu': meta_menu.get_items } %}
+                </div>
+                <div class="legal-menu menu">
+                    {% include "menu.twig" with { 'menu': legal_menu.get_items } %}
+                </div>
+            </div>
+            <div class="col-6 col-md-5 col-xl-2">
+                <div class="language">
+                    <h5 class="language__title">{{ translations.language }}</h5>
+                    {% include "partial/language_switcher.twig" with {} %}
+                </div>
+                <div class="social">
+                    <h5 class="social__title">{{ translations.spread_the_word }}</h5>
+                    {% include "partial/share.twig" with {} %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="layout mt-0">
+    <div class="layout__container">
+        <div class="row">
+            <div class="col-12 col-md-10 offset-md-1">
+                <hr class="footer__hr">    
+            </div>
+        </div>
+    </div>
+</div>
+<div class="layout py-lg-3 pb-2 mt-0">
+    {% set footer = options.footer %}
+    <div class="layout__container">
+        <div class="row">
+            <div class="col-3 col-md-2 offset-md-1">
+                <div class="">{{ footer.footer_sponsors }}</div>
+            </div>
+            <div class="col-9 col-md-8">
+                {% for logo in footer.partner_logos %}
+                    {# TO-DO: Check if logo should be its own partial template #}
+                    <div class="logo">
+                        <a class="logo__link" href="{{ logo.link["url"] }}" target="{{ logo.link["target"] }}">
+                            {% set image = TimberImage(logo.logo) %}
+                            <img class="logo__image" src="{{ image.src }}" alt="{{ image.alt }}" />
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

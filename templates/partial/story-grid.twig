@@ -1,0 +1,32 @@
+<div class="load-more layout__container">
+    <div class="row">
+        <div class="col-12 col-lg-10 offset-lg-1">
+            <div class="filter">
+                <div class="filter__text">{{ translations.stories }}</div>
+                <form class="filter__form" action="{{ site.url }}/wp-admin/admin-ajax.php" id="filter" method="POST">
+                    <div class="filter__text">{{ translations.interested_in }}</div>
+                    <div class="filter__wrapper">
+                        <select class="filter__select" id="categoryfilter" name="categoryfilter">
+                            <option value="">{{ translations.all_topics }}</option>
+                            {% for category in categories %}
+                                <option value="{{ category.term_id }}">{{ category.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <input type="hidden" name="action" value="storyfilter">
+                </form>
+            </div>
+            <div class="story-grid story-grid--masonry load-more__items load-more__items--stories" id="response">
+                {% for story in stories %}
+                    {% include 'tease-story.twig' with {} %}
+                {% endfor %}
+            </div>
+            {% if stories.pagination.next.link %}
+                <button class="button load-more__button stories" data-target="{{ stories.pagination.next.link }}"
+                        data-type="stories">
+                    {{ translations.load_more_stories }}
+                </button>
+            {% endif %}
+        </div>
+    </div>
+</div>

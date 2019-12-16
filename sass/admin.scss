@@ -1,0 +1,18 @@
+// VENDOR
+@import "../node_modules/normalize.scss/normalize";
+@import "../node_modules/bootstrap/scss/functions";
+@import "settings/variables";
+
+
+// SETTINGS
+@import "settings/global";
+
+// GENERIC
+@import "generic/fonts";
+
+// ADMIN
+@import "admin/root";
+@import "admin/admin-bar";
+@import "admin/admin-menu";
+@import "admin/acf";
+

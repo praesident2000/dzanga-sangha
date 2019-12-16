@@ -1,0 +1,36 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    {% set meta = post.get_field('meta') %}
+    {# TO-DO: add page header #}
+    <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+        {% include "partial/page_header.twig" %}
+        
+        <div class="layout__container">
+            <div class="row">
+                <div class="col-12 col-lg-10 offset-lg-1">
+                
+                    <div class="row">
+                        {% for asset in assets %}
+                            {% set file = asset.get_field('file') %}
+                            <div class="asset asset__{{asset.meta.type.slug}} col-12 col-md-6">
+                                <div class="asset__icon">
+                                    {% set image = TimberImage(asset.meta.type.icon) %}
+                                    <img class="logo__image" src="{{ image.src }}" alt="{{ image.alt }}" />
+                                </div>
+                                <div class="asset__content">
+                                    <div class="asset__kicker">{{asset.meta.type.name}}</div>
+                                    <div class="asset__title">{{asset.title}}</div>
+                                    <div class="asset__description">{{asset.meta.description}}</div>
+                                    <a class="asset__link" href="{{ file.url }}" download><i class="icon arrow-down"></i>{{ translations.download }} ({{file.subtype}}, {{ (file.filesize / 1000000)|number_format(1) }} mb)</a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </article>
+{% endblock %}

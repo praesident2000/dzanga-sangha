@@ -1,0 +1,8 @@
+<ul class="language-menu">
+    <li class="language-menu__label">{{ translations.language }}</li>
+    {% for language in languages %}
+        <li class="language-menu__item {% if language.active %}active{% endif %}">
+            <a href="{{ language.url }}" class="language-menu__link">{{ language.language_code }}</a>
+        </li>
+    {% endfor %}
+</ul>

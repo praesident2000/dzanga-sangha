@@ -1,0 +1,11 @@
+.further-links {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    &__link {
+        max-width: 320px;
+        padding-top: $spacer * 1.25;
+        padding-right: $spacer * 1.75;
+    }
+}

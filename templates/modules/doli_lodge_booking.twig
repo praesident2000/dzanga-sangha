@@ -1,0 +1,18 @@
+<div class="col-12 col-md-10 col-lg-5 offset-md-1 pb-5">
+    <div class="">{{ content.text }}</div>
+    {% if content.link %}
+        {% set link = content.link %}
+        <a href="{{ link.url }}" target="{{ link.target }}" class="{{ content.acf_fc_layout }}-module button button__link button--icon layout">
+            <i class="icon arrow-right arrow--short"></i>
+            <div class="button__text">{{ link.title }}</div>
+        </a>
+    {% endif %}
+</div>
+<div class="col-12 col-md-10 offset-md-1 col-lg-5 offset-lg-0">
+    <div class="booking">
+        {{ content.shortcode|shortcodes}}
+        <div class="booking__legend">
+            <div class="booking__legend__circle"></div> fully booked
+        </div>
+    </div>
+</div>

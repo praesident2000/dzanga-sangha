@@ -1,0 +1,35 @@
+.share {
+    list-style-type: none;
+    padding: 0;
+    display: inline-block;
+
+    &__item {
+        display: inline-block;
+        padding-right: $spacer * 0.5;
+    }
+    &__link {
+        color: $leaf;
+        transition: color .5s;
+    }
+    .icon {
+        height: 24px;
+        width: 28px;
+    }
+
+    &--inline {
+
+        .share__link {
+            color: $grass;
+            transition: color .5s;
+
+            &:hover {
+                color: $pepper;
+            }
+        }
+
+        .icon {
+            height: 32px;
+            width: 37px;
+        }
+    }
+}

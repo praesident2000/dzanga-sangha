@@ -1,0 +1,22 @@
+<form class="form needs-validation" novalidate id="form-{{ loop.index }}" method="POST" action="">
+    <div class="form-row">
+        <input type="text" id="name" class="form-control form-control-input" placeholder="{{ form.label_input_name }} *" autocomplete="off" required>
+        <div class="invalid-feedback">{{ form.error_message_name }}</div>
+    </div>
+    <div class="form-row">
+        <input type="text" id="company" class="form-control form-control-input" placeholder="{{ form.label_input_company }}" autocomplete="off">
+    </div>
+    <div class="form-row">
+        <input type="email" id="mail" class="form-control form-control-input" placeholder="{{ form.label_input_mail }} *" autocomplete="off" required>
+        <div class="invalid-feedback">{{ form.error_message_mail }}</div>
+    </div>
+    <div class="form-row mt-4">
+        <textarea id="message" class="form-control form-control-feedback" placeholder="{{ form.label_message }}" rows="4"></textarea>
+    </div>
+    <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="legal" required>
+        <label class="custom-control-label" for="legal">{{ form.label_legal }}</label>
+        <div class="invalid-feedback">{{ form.error_message_legal }}</div>
+    </div>
+    <button class="button button--pepper bg-pepper" type="submit">{{ form.text_button }}</button>
+</form>

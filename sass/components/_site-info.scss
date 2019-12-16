@@ -1,0 +1,27 @@
+.site-info {
+    &__title {
+        font-weight: bold;
+        font-size: 14px;
+        text-transform: uppercase;
+        width: max-content;
+    }
+
+    &__description {
+        font-size: 12px;
+    }
+
+    @media screen and (min-width: map-get($grid-breakpoints, "md")) {
+
+        position: absolute;
+        bottom: 10%;
+        transform: rotate(-90deg);
+
+        &__title {
+            font-size: 17px;
+        }
+
+        &__description {
+            font-size: 13px;
+        }
+    }
+}

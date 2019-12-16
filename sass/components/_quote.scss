@@ -1,0 +1,21 @@
+.quote {
+    border-left: 2px solid;
+    border-color: $grass;
+    color: $grass;
+    font-size: $font-size-base * 1.75;
+    padding-left: $spacer * 1.5;
+    transition: color 750ms, border-color 750ms;
+    .bg-leaf &, .bg-grass & {
+        border-color: $white;
+        color: $white;
+        &:hover {
+            color: $white;
+        }
+    }
+    .layout--2_columns &, .layout--margin_column & { 
+        font-size: $font-size-base * 1.25;
+    }
+    &:hover {
+        color: darken($grass, 15%);
+    }
+}

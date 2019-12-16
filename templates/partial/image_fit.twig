@@ -1,0 +1,16 @@
+{% set image = TimberImage(image) %}
+{% set focus_point = image.get_field('focus_point') %}
+{% set copyright = image.get_field('copyright') %}
+<div class="{% if zoom == 'true' %} image-fit--zoom{% endif %} image-fit {% if clipmask %} image-fit--clipmask{% endif %}{% if parallax %}image-fit--parallax{% endif %}">
+    <img
+        class="image-fit__image lozad"
+        {# TO DO check if different srcset option for header images is needed #}
+        data-src="{{ image.src }}"
+        data-srcset="{{ image.src("medium") }} 320w,{{ image.src("medium_large") }} 768w,{{ image.src("large") }} 1024w,{{ image.src }} 1600w"
+        alt="{{ image.alt }}"
+        {# TO DO implement optional masking via .png #}
+        {% if focus_point != null %}style="object-position: {{ focus_point.horizontal }}% {{ focus_point.vertical }}%"{% endif %}
+    />
+    {% if overlay %}<div class="image-fit__overlay"></div>{% endif %}
+    {% if copyright %}<div class="image-fit__copyright">{{ copyright }}</div>{% endif %}
+</div>

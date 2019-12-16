@@ -1,0 +1,7 @@
+<div class="{{content.acf_fc_layout}}-module">
+    <div class="logo-group {% if modifier %}{{ modifier }}{% endif %}">
+        {% for logo in content.logos %}
+            {% include 'partial/logo.twig' with { style:"" } %}
+        {% endfor %}
+    </div>
+</div>

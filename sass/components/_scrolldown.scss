@@ -1,0 +1,48 @@
+.scrolldown {
+    display: none;
+    @media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+        display: block;
+        position: absolute;
+        right: -$spacer * 2;
+        bottom: $spacer * 4;
+        z-index: 10;
+        transform: rotate(90deg);
+
+        &__text {
+            display: inline-block;
+            padding-right: $spacer;
+            font-size: 18px;
+        }
+        
+        &__icon-container {
+            display: inline-block;
+            width: 84px;
+        }
+
+        &__icon {
+            width: 60px;
+            margin-top: 6px;
+            margin-bottom: 6px;
+            animation-name: grow;
+            animation-duration: 6s;
+            animation-iteration-count: 3;
+        }
+    }
+    .page-template-page_contact &, .page-template-page_assets & {
+        display: none;
+    }
+}
+@keyframes grow {
+    0% {
+        width: 60px;
+    }
+    80% {
+        width: 60px;
+    }
+    90% {
+        width: 80px;
+    }
+    100% {
+        width: 60px;
+    }
+}

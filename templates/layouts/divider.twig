@@ -1,0 +1,27 @@
+<div class="layout layout--{{row.acf_fc_layout}}">
+    {% if     row.type == "hr" %}
+        <div class="layout__container">
+            <div class="row">
+                <div class="col-10 offset-1">
+                    <hr>
+                </div>
+            </div>
+        </div>
+    {% elseif row.type == "image" %}
+        <div class="divider">
+            <div class="divider__text {% if row.text %}divider__text--not-empty{% endif %} layout-fluid">
+                <div class="row">
+                    <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+                        {{ row.text }}
+                    </div>
+                </div>
+            </div>
+            <div class="divider__image">
+                {% set image = row.image %}
+                {% include "partial/image_fit.twig" %}
+            </div>
+        </div>
+    {% elseif row.type == "spacer" %}
+        <div class="layout__container divider" style="height:{{row.height}}px"></div>
+    {% endif %}
+</div>

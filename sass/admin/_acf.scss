@@ -1,0 +1,9 @@
+.acf-tooltip {
+    background-color: $leaf;
+    &.top::before {
+        border-top-color: $leaf;
+    }
+}
+.wpml_acf_original_value {
+    display: none;
+}

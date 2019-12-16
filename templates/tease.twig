@@ -1,0 +1,13 @@
+{% set image = story.meta.featured_image %}
+
+<a href="{{story.link}}" class="tease tease-{{story.post_type}}" id="tease-{{story.ID}}">
+	<div class="tease__content">
+		<div class="tease__kicker">
+			{{story.type.labels.singular_name}} | {{ story.terms('category')|join('| ') }}
+		</div>
+		<h2 class="tease__title">{{story.meta.title}}</h2>
+	</div>
+	<div class="tease__image">
+		{% include 'partial/image_fit.twig' with { overlay:'true', parallax: 'true' } %}
+	</div>
+</a>

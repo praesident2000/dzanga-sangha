@@ -1,0 +1,52 @@
+{# This file demonstrates using most of the index.twig template and modifying
+   just a small part. See `search.twig` for an example of another approach #}
+
+{% extends "base.twig" %}
+
+{% block content %}
+    {% for post in posts %}
+        <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+            <div class="page-header page-header--standard page-header--story-slider">
+                <div class="progress">
+                    <div class="progress__bar" style="animation-duration: {{ post.autoplay }}ms"></div>
+                </div>
+                <div class="layout__container">
+                    <div class="row">
+                        <div class="story-slider col-12 col-lg-5 col-xl-6">
+                            <div class="main-carousel story-slider__container" data-autoplay="{{ post.autoplay }}">
+                                {% set featured_stories = post.get_field('featured_stories') %}
+                                {% for featured_story in featured_stories %}
+                                    {% set story = TimberPost(featured_story.story) %}
+                                    {% set meta = story.get_field('meta') %}
+                                    {% set kickertxt = story.category %}
+                                    <div class="story-slider__item carousel-cell">
+                                        <div class="story-slider__image">
+                                            {% include 'partial/image_fit.twig' with { image: meta.featured_image, clipmask: true} %}
+                                        </div>
+                                        <div class="story-slider__meta">
+                                            <div class="story-slider__meta-wrap">
+                                                <div class="story-slider__kicker">{{ translations.story }} <span>{{ kickertxt }}</span>
+                                                </div>
+                                                <h2 class="story-slider__title"><a href="{{ story.link }}">{{ meta.title }}</a></h2>
+                                                <div class="blob blob--4"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 col-xl-5">
+                            {% include 'partial/news-grid.twig' with { colclass: 'col-12 col-lg-6', title: 'Recent News'} %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% include 'partial/story-grid.twig' with { } %}
+        </article>
+    {% endfor %}
+{% endblock %}
+{% block scripts %}
+	{{ parent() }}
+    <script src="{{ site.theme.link }}/dist/archive.min.js"></script>
+    <script src="{{ site.theme.link }}/dist/storyslider.min.js"></script>
+{% endblock %}

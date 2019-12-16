@@ -1,0 +1,74 @@
+<div class="layout layout--margin_column">
+    <div class="layout__container">
+        <div class="row">
+            <div class="layout__column-with-margin {{ column_layout_classes }}">
+                <h2 class="h2">{{ post.title }}</h2>
+            </div>
+        </div>
+    </div>
+
+    {% for row in post.get_field('rows') %}
+        {% for content in row.content_overlay %}
+            {% if    content.acf_fc_layout == 'accordion' %}
+                <div class="layout__container">
+                    <div class="row">
+                        <div class="layout__column-with-margin {{ column_layout_classes }}">
+                            {% include 'modules/accordion.twig' with {} %}
+                        </div>
+                    </div>
+                </div>
+            {% elseif content.acf_fc_layout == 'call_to_action' %}
+                <div class="layout__container">
+                    <div class="row">
+                        <div class="layout__column-with-margin {{ column_layout_classes }}">
+                            {% include 'modules/call_to_action.twig' with { link:content.link, overlay: true } %}
+                        </div>
+                    </div>
+                </div>
+            {% elseif content.acf_fc_layout == 'image' %}
+                <div class="layout__container">
+                    <div class="row">
+                        <div class="layout__column-with-margin col-12 col-md-10 offset-md-1">
+                            {% include 'modules/image.twig' with { image: content.image, caption: content.caption } %}
+                        </div>
+                    </div>
+                </div>
+            {% elseif content.acf_fc_layout == 'images' %}
+                <div class="layout__container">
+                    <div class="row">
+                        <div class="col-6 col-md-5 offset-md-1">
+                            {% include 'modules/image.twig' with { image: content.image_1, caption: content.caption_1 } %}
+                        </div>
+                        <div class="col-6 col-md-5">
+                            {% include 'modules/image.twig' with { image: content.image_2, caption: content.caption_2 } %}
+                        </div>
+                    </div>
+                </div>
+            {% elseif content.acf_fc_layout == 'quote' %}
+                <div class="layout__container">
+                    <div class="row">
+                        <div class="layout__column-with-margin {{ column_layout_classes }}">
+                            {% include 'modules/quote.twig' with {} %}
+                        </div>
+                    </div>
+                </div>
+            {% elseif content.acf_fc_layout == 'text' %}
+                <div class="layout__container">
+                    <div class="row">
+                        <div class="layout__column-with-margin {{ column_layout_classes }}">
+                            {% include 'modules/text.twig' with {} %}
+                        </div>
+                    </div>
+                </div>
+            {% elseif content.acf_fc_layout == 'video' %}
+                <div class="layout__container">
+                    <div class="row">
+                        <div class="col-12">
+                            {% include 'modules/video.twig' with { video: content } %}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+</div>

@@ -1,0 +1,22 @@
+.social {
+    font-size: $font-size-lg;
+    margin-top: $spacer + 2;
+    margin-bottom: $spacer + 2;
+
+    &__title {
+        font-size: $font-size-lg;
+    }
+
+    &--inline {
+        text-align: center;
+
+        .social__title {
+            font-size: $font-size-sm;
+            font-weight: normal;
+            letter-spacing: 1px;
+            border-bottom: 1px solid $gray-600;
+            padding-bottom: $spacer/2;
+            margin-bottom: $spacer/2;
+        }
+    }
+}

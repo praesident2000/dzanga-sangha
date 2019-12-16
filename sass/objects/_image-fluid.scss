@@ -1,0 +1,17 @@
+.image-fluid {
+    &__image {
+        width: 100%;
+        height: auto;
+    }
+
+    &__copyright {
+        position: absolute;
+        color: $white;
+        cursor: default;
+        bottom: $spacer;
+        right: $spacer;
+        font-size: 12px;
+        text-shadow: 1px 1px 3px rgba($black,0.85);
+        z-index: 1;
+    }
+}

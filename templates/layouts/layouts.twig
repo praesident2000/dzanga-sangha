@@ -1,0 +1,12 @@
+{% for row in post.get_field('rows') %}
+    {% if     row.acf_fc_layout == '1_column' %}
+        {% include 'layouts/1_column.twig' with {} %}
+    {% elseif row.acf_fc_layout == '2_columns'%}
+        {% include 'layouts/2_columns.twig' with {} %}
+    {% elseif row.acf_fc_layout == 'margin_column'%}
+        {% include 'layouts/margin_column.twig' with {} %}
+    {% elseif row.acf_fc_layout == 'divider'%}
+        {% include 'layouts/divider.twig' with {} %}
+    {% endif %}
+{% endfor %}
+				

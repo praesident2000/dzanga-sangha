@@ -1,0 +1,19 @@
+{# Testimonials: {{ dump(content) }} #}
+<div class="{{content.acf_fc_layout}}-module">
+    <div class="main-carousel testimonials" data-flickity='{ "cellAlign": "center", "wrapAround": true, "prevNextButtons": false, "setGallerySize": false }'>
+    {% for testimonial in content.testimonials %}
+        <div class="carousel-cell testimonials__cell row">
+            <div class="testimonials__image-column col-6 offset-3 col-md-3 offset-md-1 col-xl-2 offset-xl-3 p-0">
+                <div class="testimonials__image">
+                    {% set image = testimonial.image %}
+                    {% include 'partial/image_fit.twig' with {} %}
+                </div>
+            </div>
+            <div class="testimonials__text-column col-10 offset-1 col-md-7 offset-md-0 col-xl-5">
+                <div class="testimonials__text">{{ testimonial.text }}</div>
+                <p>{{ testimonial.person }}</p>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>

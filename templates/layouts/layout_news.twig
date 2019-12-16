@@ -1,0 +1,47 @@
+{% for row in post.get_field('rows') %}
+    <div class="layout layout--{{ row.acf_fc_layout }} bg-{{ row.background }}">
+        {% for content in row.content_news %}
+            {% if content.acf_fc_layout == 'call_to_action' %}
+                <div class="layout__container">
+                    <div class="row">
+                        <div class="{{ column_layout_classes }}">
+                            {% include 'modules/call_to_action.twig' with { link:content.link } %}
+                        </div>
+                    </div>
+                </div>
+            {% elseif content.acf_fc_layout == 'image' %}
+                <div class="layout__container">
+                    <div class="row">
+                        <div class="col-12 col-md-10 offset-md-1">
+                            {% include 'modules/image.twig' with { image: content.image, caption: content.caption } %}
+                        </div>
+                    </div>
+                </div>
+            {% elseif content.acf_fc_layout == 'quote' %}
+                <div class="layout__container">
+                    <div class="row">
+                        <div class="{{ column_layout_classes }}">
+                            {% include 'modules/quote.twig' with {} %}
+                        </div>
+                    </div>
+                </div>
+            {% elseif content.acf_fc_layout == 'text' %}
+                <div class="layout__container">
+                    <div class="row">
+                        <div class="{{ column_layout_classes }}">
+                            {% include 'modules/text.twig' with {} %}
+                        </div>
+                    </div>
+                </div>
+            {% elseif content.acf_fc_layout == 'video' %}
+                <div class="layout__container">
+                    <div class="row">
+                        <div class="col-12 col-md-10 offset-md-1">
+                            {% include 'modules/video.twig' with {} %}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endfor %}

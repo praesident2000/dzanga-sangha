@@ -1,0 +1,114 @@
+.context-slider {
+    height: 500px;
+    color: $white;
+    text-align: center;
+    margin-bottom: 36px;
+
+    &__cell {
+        height: 100%;
+        margin-left: $spacer * 0.5;
+        margin-right: $spacer * 0.5;
+    }
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 1650ms cubic-bezier(0, .1, .25, .1);
+
+        .is-selected & {
+            opacity: 1;
+        }
+    }
+    &__title {
+        padding-top: $global-layout-spacer;
+    }
+    &__link {
+        color: $white;
+        padding-top: $global-layout-spacer;
+        .icon {
+            margin-right: $spacer * 0.5;
+        }  
+    }
+    .image-fit {
+        z-index: -1;
+    }
+    .flickity-button {
+        background: none;
+        color: $white;
+        transition: color 500ms;
+        &:hover {
+            color: $pepper;
+        }
+    }
+    .flickity-page-dots {
+        bottom: -36px;
+
+        .dot {
+            width: 18px;
+            height: 18px;
+            background: transparent;
+            border: 1px solid $black;
+            border-radius: 50%;
+            opacity: 1;
+
+            &::after {
+                content: "";
+                display: block;
+                width: 10px;
+                height: 10px;
+                margin: 3px;
+                background: $black;
+                border-radius: 50%;
+                opacity: 0;
+                transition: opacity 400ms;
+            }
+            &.is-selected::after {
+                opacity: 1;
+            }
+        }
+    }
+    .bg-leaf & {
+        .flickity-page-dots {
+    
+            .dot {
+                border: 1px solid $white;
+    
+                &::after {
+                    background: $white;
+                }
+            }
+        }
+    }
+    @media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+
+        height: 420px;
+
+        &__cell {
+            margin-left: $spacer;
+            margin-right: $spacer;
+        }
+
+        &__title {
+            font-size: 55px;
+        }
+
+        .flickity-prev-next-button {
+            width: 60px;
+            height: 60px;
+    
+            &.next {
+                right: 8%;
+            }
+    
+            &.previous {
+                left: 8%;
+            }
+        }
+
+    }
+}

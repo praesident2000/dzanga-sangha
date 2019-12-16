@@ -1,0 +1,10 @@
+input {
+    &[type="text"], &[type="email"] {
+        border: 0;
+        border-bottom: 1px solid;
+        background: transparent;
+        color: inherit;
+        font-size: 28px;
+        width: 100%;
+    }
+}

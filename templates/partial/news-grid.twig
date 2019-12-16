@@ -1,0 +1,28 @@
+<div class="news-grid load-more">
+    <div class="row">
+        <div class="{{ colclass }}">
+            <h6 class="h6">{{ title }}</h6>
+        </div>
+    </div>
+    <div class="row news-grid__container load-more__items load-more__items--news">
+        {% for item in news %}
+            {% set meta = item.get_field('meta') %}
+            <div class="news-grid__item {{ colclass }}">
+                <div class="news-grid__date">{{ item.date("d.m.Y") }}</div>
+                <h5 class="h5 news-grid__title"><a href="{{ item.link }}">{{ item.meta.title }}</a></h5>
+                <p class="news-grid__title">{{ item.meta.intro }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    {% if news.pagination.next.link %}
+        <div class="row">
+            <div class="{{ colclass }}">
+                <button class="button button--icon load-more__button"
+                        data-target="{{ news.pagination.next.link }}" data-type="news">
+                    <i class="icon plus"></i>
+                    <div class="button__text">Load more news</div>
+                </button>
+            </div>
+        </div>
+    {% endif %}
+</div>

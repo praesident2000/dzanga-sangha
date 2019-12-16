@@ -1,0 +1,16 @@
+hr {
+    border-top: 1px solid $gray-600;
+    border-left: none;
+    border-bottom: none;
+    border-right: none;
+    margin-top: $global-layout-spacer;
+    margin-bottom: $global-layout-spacer;
+    .layout & {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    @media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+        margin-top: $global-layout-spacer-large;
+        margin-bottom: $global-layout-spacer-large;
+    }
+}

@@ -1,0 +1,57 @@
+.tease {
+    display: block;
+    position: relative;
+    height: 435px;
+    color: $white;
+
+    &__content {
+        position: absolute;
+        bottom: 0;
+        padding: $global-layout-spacer;
+        z-index: 1;
+        @media screen and (min-width: map-get($grid-breakpoints, "md")) {
+            padding: $global-layout-spacer-large;
+        }
+    }
+
+    &__kicker {
+        color: $white;
+        text-transform: uppercase;
+    }
+
+    &__title {
+        margin-bottom: 0;
+        color: $white;
+    }
+
+    &__image {
+    }
+
+    &:hover .image-fit__overlay {
+        background-color: rgba($pepper,0.75);
+    }
+
+    &:hover .image-fit__image {
+        height: 100%;
+    }
+    .image-fit__copyright {
+        display: none;
+    }
+}
+
+.stories-overview {
+    .tease {
+        opacity: 0;
+        transition: opacity 450ms ease-in-out;
+
+        .tease__content {
+            padding: $spacer * 1.5;
+        }
+        .tease__title {
+            font-size: 1.75rem;
+        }
+        &.is-visible {
+            opacity: 1;
+        }
+    }
+}

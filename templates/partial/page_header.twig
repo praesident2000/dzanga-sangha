@@ -1,0 +1,27 @@
+<div class="page-header page-header--{{ meta.layout }} {% if meta.layout == 'no-image' %}layout__container{% endif %}">
+    <div class="row">
+        {% if meta.layout != 'no-image' %}
+            <div class="page-header__image col-12 col-lg-6 rellax rellax--disable-md" data-rellax-speed="2">
+                {% include 'partial/image_fit.twig' with { image: meta.featured_image, clipmask: true} %}
+            </div>
+        {% endif %}
+        <div class="page-header__meta col-12 col-sm-10 offset-sm-1 
+            {% if meta.layout == 'alternative' %}
+                col-lg-5 offset-lg-1
+            {% elseif meta.layout == 'no-image' %}
+                col-lg-8 offset-lg-2 col-xl-6 offset-xl-3
+            {% else %}
+                col-lg-5 offset-lg-0
+            {% endif %}"
+        >
+            <div class="page-header__kicker"><span>{{ kickertxt }}</span></div>
+            <h2 class="page-header__title">{{ meta.title }}</h2>
+            <div class="page-header__intro">{{ meta.intro }}</div>
+            {% if meta.layout != 'no-image' %}
+                <div class="blob blob--4"></div>
+            {% else %}
+                <div class="blob blob--1"></div>
+            {% endif %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<nav id="nav-main" class="nav-main" role="navigation">
+    <div class="nav-main__logo">
+        <div class="logo">
+            <a class="logo__link" href="{{ site.link }}">
+                {% set image = TimberImage(options.website_logo) %}
+                <img class="logo__image" src="{{ image.src }}" alt="{{ image.alt }}" />
+            </a>
+        </div>
+    </div>
+    
+    <div class="nav-main__mobile-toggler" data-toggle="modal" data-target="#modal-menu">
+        <div class="hamburger hamburger--mobile">
+            <div class="hamburger__box">
+                <div class="hamburger__inner"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-main__toggler">
+        <div class="hamburger">
+            <div class="hamburger__box">
+                <div class="hamburger__inner"></div>
+            </div>
+        </div>
+        <div class="nav-overlay p-2 p-md-4">
+            <div class="nav-overlay__inner">
+                <div class="layout-fluid">
+                    <div class="logo logo--main">
+                        <a class="logo__link" href="{{ site.link }}">
+                            {% set image = TimberImage(options.website_logo) %}
+                            <img class="logo__image" src="{{ image.src }}" alt="{{ image.alt }}" />
+                        </a>
+                    </div>
+                </div>
+                {% include "partial/main-menu.twig" %}
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-main__footer">
+        <div class="site-info">
+            <div class="site-info__title">{{ site.title }}</div>
+            <div class="site-info__description">{{ site.description }}</div>
+        </div>
+    </div>
+    <div class="nav-overlay__shape-box">
+        <svg class="nav-overlay__shape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1172.23 1249.96" width="1172.2" height="1249.875" preserveAspectRatio="none">
+            <path d="M797.12,399.851 C943.581,537.551 1170.278,662.086 1172.188,789.611 C1174.098,917.136 950.904,1048.255 804.443,1134.469 C657.982,1220.084 588.256,1260.797 524.893,1248.818 C461.533,1236.245 404.54,1172.183 302.654,1086.568 C200.768,1000.358 53.988,893.189 12.597,708.187 C-28.476,523.787 35.521,260.95 137.407,123.247 C239.293,-14.456 379.068,-27.029 481.91,41.818 C584.432,111.273 650.656,262.148 797.12,399.851 Z"/>
+        </svg>
+    </div>
+</nav><!-- #nav -->

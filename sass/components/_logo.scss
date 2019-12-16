@@ -1,0 +1,48 @@
+.logo {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 $spacer;
+    margin-left: $spacer * 0.5;
+    margin-right: $spacer * 0.5;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    transition-duration: transform 250ms;
+
+    &:hover {
+        transform: scale(0.94);
+    }
+
+    @media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+        width: 85px;
+        height: 85px;
+    }
+
+    &__image {
+        padding: 5px;
+        max-width: 100%;
+    }
+
+    &--rounded {
+        border-radius: 50%;
+        background-color: $white;
+    }
+
+    &--main {
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        display: none;
+        padding: 0;
+        margin: 0;
+
+        &:hover {
+            transform: none;
+        }
+        @media screen and (min-width: map-get($grid-breakpoints, "lg")) and (min-height: map-get($grid-breakpoints, "md")) {
+            display: block;
+        }
+    }
+}

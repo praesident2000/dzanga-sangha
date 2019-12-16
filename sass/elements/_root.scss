@@ -1,0 +1,32 @@
+html {
+    font-family: $global-font-family-sans;
+    font-size: $font-size-base;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-feature-settings: "ss01";
+    -webkit-font-feature-settings: "ss01";
+    font-feature-settings: "ss01";
+    ::selection {
+        background: $pepper;
+        color: $white;
+    }
+    ::-moz-selection {
+        background: $pepper;
+        color: $white;
+    }
+}
+
+* , *:before, *:after{ 
+    box-sizing:border-box; 
+    -moz-box-sizing:border-box; 
+    -webkit-box-sizing:border-box; 
+    -ms-box-sizing:border-box;
+}
+
+body {
+    @media screen and (min-width: map-get($grid-breakpoints, "md")) {
+        margin-left: $nav-bar-width;
+        width: calc(100% - #{$nav-bar-width});
+    }
+}

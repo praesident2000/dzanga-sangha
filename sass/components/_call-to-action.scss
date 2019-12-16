@@ -1,0 +1,31 @@
+.cta {
+
+    display: flex;
+    justify-content: flex-start;
+    font-size: $font-size-lg;
+    font-weight: bold;
+
+    &__link {
+        color: $pepper;
+        &:hover {
+            color: $orange;
+        }
+    }
+
+    &__icon {
+        margin-top: $spacer * 1.5;
+        width: 45px;
+        height: 22px;
+        stroke: $pepper;
+        .cta__link:hover & {
+            width: 100%;
+        }
+    }
+
+    &--large {
+        font-size: 2rem;
+    }
+    // @media screen and (min-width: map-get($grid-breakpoints, "md")) {
+    //     justify-content: flex-end;
+    // }
+}

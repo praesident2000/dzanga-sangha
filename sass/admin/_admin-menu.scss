@@ -1,0 +1,66 @@
+#adminmenuback, #adminmenuwrap {
+    background: $leaf;
+}
+
+#adminmenu {
+    background: $leaf;
+    
+    & .wp-has-current-submenu .wp-submenu, 
+    & .wp-has-current-submenu .wp-submenu.sub-open, 
+    & .wp-has-current-submenu.opensub .wp-submenu, 
+    & a.wp-has-current-submenu:focus+.wp-submenu {
+        background: $elefant;
+        a, .current a, li.current {
+            color: $black;
+        }
+    }
+    .wp-submenu a:hover {
+        color: $grass;
+    }
+    li {
+        &.wp-has-current-submenu {
+            a.wp-has-current-submenu {
+                background: $grass;
+            }
+        }
+        &.menu-top:hover, 
+        &.menu-top>a:focus {
+            background-color: $pepper;
+            color: $white;
+        }
+        a:focus div.wp-menu-image:before, 
+        &.opensub div.wp-menu-image:before, 
+        &:hover div.wp-menu-image:before {
+            color: $white;
+        }
+        &.opensub>a.menu-top {
+            background: $pepper;
+            color: $white;
+        }
+        &:hover .update-plugins {
+            background: $orange;
+        }
+        &.wp-has-submenu.wp-not-current-submenu.opensub:hover:after {
+            border-right-color: $leaf;
+        }
+    }
+    a {
+        &:hover, .wp-submenu 
+        &:hover, .wp-submenu 
+        &:focus {
+            color: $white;
+        }
+    }
+    .update-plugins {
+        background: $pepper;
+    }
+    .wp-submenu {
+        background: $leaf;
+        li.current a:hover{
+            color: $grass;
+        }
+    }
+}
+#collapse-button:hover {
+    color: $white;
+}

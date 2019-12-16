@@ -1,0 +1,82 @@
+.map {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  &__image {
+    background: url(../assets/images/africa-shape.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    width: 770px;
+    height: 820px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+    right: 0;
+  }
+
+  &__pointer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 160px;
+      height: 160px;
+      background: url(../assets/images/dzanga-sangha.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      z-index: +1;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-67%) scale(1);
+      right: 268px;
+    }
+
+    &:hover {
+
+      &:after {
+        animation: pulsate;
+        animation-duration: 1.5s;
+        animation-fill-mode: both;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+      }
+    }
+  }
+
+  @media screen and (max-width: map-get($grid-breakpoints, "lg")) {
+
+    &__image {
+      width: 100%;
+      background-image: url(../assets/images/africa.png);
+      background-size: cover;
+      background-position-y: bottom;
+      padding-top: 80%;
+      position: relative;
+      top: 0;
+      transform: none;
+      height: auto;
+    }
+
+    &__pointer {
+      display: none;
+    }
+  }
+}
+
+@keyframes pulsate {
+  0%, 100% {
+    transform: translateY(-67%) scale(1);
+  }
+
+  50% {
+    transform: translateY(-67%) scale(1.1);
+  }
+}

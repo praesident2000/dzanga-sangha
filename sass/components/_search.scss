@@ -1,0 +1,23 @@
+.search-form {
+    display: flex;
+    padding-top: $spacer;
+
+    input.search-form__input {
+        border-bottom: none;
+        font-size: 20px;
+        padding-left: 0;
+        padding-right: 0;
+        &::placeholder {
+            color: inherit;
+        }
+        &:focus::placeholder {
+            opacity: 0;
+        }
+    }
+
+    &__submit {
+        appearance: none;
+        background: transparent;
+        border: none;
+    }
+}

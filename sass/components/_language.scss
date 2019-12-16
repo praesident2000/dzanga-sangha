@@ -1,0 +1,45 @@
+.language {
+    font-size: $font-size-lg;
+    margin-bottom: $spacer + 2;
+    
+    &__title {
+        font-size: $font-size-lg;
+    }
+    
+    &-menu {
+    
+        display: flex;
+        list-style-type: none;
+        padding-left: 0;
+        font-size: $font-size-lg;
+    
+        &__label {
+            padding-right: $spacer *0.25;
+
+            .language & {
+                display: none;
+            }
+        }
+    
+        &__item {
+            text-transform: uppercase;
+            padding: 0 $spacer * 0.25;
+    
+            &.active {
+                border-bottom: 1px solid;
+            }
+            .language & {
+
+                color: $leaf;
+
+                &.active {
+                    border-bottom: 1px solid $leaf;
+                } 
+            }
+        }
+
+        &__link {
+            color: inherit;
+        }
+    }
+}

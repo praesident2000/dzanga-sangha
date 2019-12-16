@@ -1,0 +1,27 @@
+.partner-header {
+
+    padding-top: $global-layout-spacer-huge;
+    padding-bottom: $global-layout-spacer-large;
+
+    @media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+        padding-top: $global-layout-spacer-huge * 2.5;
+    }
+    
+    &__type {
+        display: inline-block;
+    }
+
+    &__logo {
+        .logo {
+            width: auto;
+            height: auto;
+            max-height: 135px;
+            max-width: 135px;
+            padding: 0;
+            justify-content: flex-start;
+            &:hover {
+                transform: none;
+            }
+        }
+    }
+}

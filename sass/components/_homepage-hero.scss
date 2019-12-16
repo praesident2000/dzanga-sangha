@@ -1,0 +1,112 @@
+.homepage-hero {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    height: 100%;
+    overflow: hidden;
+    color: $white;
+    text-align: center;
+
+    &__text {
+        z-index: 1;
+        animation-name: fadeIn;
+        animation-duration: 2s;
+        animation-fill-mode: both;
+        animation-timing-function: ease;
+        align-self: flex-end;
+    }
+
+    &__logo {
+        display: none;
+
+        &--inverted {
+            display: block;
+        }
+    }
+
+    &__image {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 0;
+        animation-name: fadeIn;
+        animation-duration: 1s;
+        animation-fill-mode: both;
+        animation-timing-function: ease;
+
+        img {
+            filter: brightness(75%);
+        }
+    }
+
+    &__title {
+        font-size: 40px;
+    }
+
+    &__intro {
+        font-size: $font-size-lg;
+    }
+
+    @media screen and (min-width: map-get($grid-breakpoints, "md")) {
+        
+        min-height: auto;
+        text-align: left;
+        color: $black;
+
+        &__logo {
+            display: block;
+            max-width: 110px;
+            &--inverted {
+                display: none;
+            }
+        }
+
+        &__image {
+            img {
+                filter: brightness(100%);
+            }
+        }
+
+        &__title {
+            font-size: 55px;
+        }
+
+        &__intro {
+            font-size: $welcome-copy-size;
+        }
+    }
+    @media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+        & {
+            height: 100vh;
+            &__text {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+            &__title {
+                font-size: $welcome-font-size;
+                line-height: $welcome-font-size + 10;
+            }
+            &__logo {
+                max-width: 100%;
+            }
+        }
+        .image-fit__copyright {
+            transform: rotate(90deg);
+            top: 2rem;
+            right: 0rem;
+            bottom: auto;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }

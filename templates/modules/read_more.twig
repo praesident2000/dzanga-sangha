@@ -1,0 +1,16 @@
+<div class="{{content.acf_fc_layout}}-module read-more">
+    {% if not content.type %}
+        <button class="button read-more__button"><i class="icon plus"></i>{{ content.label }}</button>
+        <div class="read-more__text">
+            {{ content.text }}
+        </div>
+    {% else %}
+        {% if content.overlay is iterable %}
+            {% set overlay = content.overlay %}
+        {% else %}
+            {% set overlay = TimberPost(content.overlay) %}
+        {% endif %}
+        <button class="button modal__button" data-toggle="modal" data-target="#modal-{{ overlay.id }}">{{ content.label }}</button>
+        {% include 'modules/modal.twig' with { overlay:overlay, id:overlay.id } %}
+    {% endif %}
+</div>

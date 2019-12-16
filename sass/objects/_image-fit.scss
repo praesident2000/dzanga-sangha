@@ -1,0 +1,86 @@
+%image_fullsize {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+  
+.image-fit {
+    @extend %image_fullsize;
+    z-index: 0;
+    overflow: hidden;
+
+    &__image {
+        @extend %image_fullsize;
+        display: block;
+        object-fit: cover;
+        transition: height 850ms;
+        z-index: 1;
+    }
+    &__overlay {
+        @extend %image_fullsize;
+        background-color: rgba($black,0.25);
+        transition: background-color 850ms;
+        z-index: 1;
+    }
+    &__copyright {
+        position: absolute;
+        color: $white;
+        cursor: default;
+        bottom: $spacer;
+        right: $spacer;
+        font-size: 12px;
+        text-shadow: 1px 1px 3px rgba($black,0.85);
+        z-index: 1;
+    }
+    &--zoom {
+
+        &:hover .image-fit__image {
+            height: 104%;
+        }
+    }
+
+    &--clipmask {
+        position: relative;
+
+        @media screen and (min-width: map-get($grid-breakpoints, "md")) {
+            background-size: 0;
+            background-image: url(../images/mask-shape.svg);
+            background-repeat: no-repeat;
+            filter: drop-shadow(1px 1px 5px rgba(0,0,0,0.3));
+            position: relative;
+            overflow: visible;
+            left: -30%;
+            right: auto;
+            width: 130%;
+            top: -3%;
+            height: 75vh;
+        }
+
+        @media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+            position: absolute;
+            left: auto;
+            right: 0;
+            top: -5%;
+            height: 100%;
+        }
+
+        @media screen and (min-width: map-get($grid-breakpoints, "xl")) {
+            width: 115%;
+        }
+
+        .image-fit__image {
+            position: relative;
+
+            @media screen and (min-width: map-get($grid-breakpoints, "md")) {
+                position: absolute;
+                overflow: visible;
+                mask-image: url(../images/mask-shape.svg);
+                mask-repeat: no-repeat;
+                mask-size: contain;
+                mask-position: right;
+            }
+        }
+    }
+}

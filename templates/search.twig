@@ -1,0 +1,52 @@
+{# see `archive.twig` for an alternative strategy of extending templates #}
+{% extends "base.twig" %}
+
+{% block content %}
+    {# see `base.twig:27` for where this block's content will be inserted #}
+    <div class="layout__container">
+        <div class="row">
+            {% if title %}
+                <div class="col-12 col-md-10 offset-md-1 col-lg-5 offset-lg-2 mt-3 mb-3 pt-3 pb-3 mt-lg-5 mb-lg-5 pt-lg-5 pb-lg-5">
+                    <h1 class="search__title">{{ title }}</h1>
+                    <div class="blob blob--1"></div>
+                </div>
+            {% endif %}
+            <form class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2" role="search" method="get"
+                  action="{{ site.url }}">
+                <div class="row">
+                    <div class="col-8">
+                        <input id="search2" name="s" class="" type="text" value="{{ function('get_search_query') }}"
+                               autocomplete="off" placeholder="{{ translations.search }}"/>
+                    </div>
+                    <div class="col-4">
+                        <input id="submit-search" class="button" type="submit" value="{{ translations.search }}">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row load-more">
+            <div class="load-more__items load-more__items--search layout col-12 col-md-10 offset-md-1 col-lg-5 offset-lg-2">
+                {% for post in posts %}
+                    <div class="mt-5">
+                        {% include 'tease-search.twig' %}
+                    </div>
+                {% endfor %}
+            </div>
+            {% if posts.pagination.next.link %}
+                <div class="col-10 offset-1 col-lg-3 offset-lg-3 layout">
+                    <button class="button button--icon load-more__button"
+                            data-target="{{ posts.pagination.next.link }}" data-type="search">
+                        <i class="icon plus"></i>
+                        <div class="button__text">{{ translations.load_more_results }}</div>
+                    </button>
+                </div>
+            {% endif %}
+        </div>
+        {# {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %} #}
+    </div>
+{% endblock %}
+{% block scripts %}
+    {{ parent() }}
+    <script src="{{ site.theme.link }}/dist/search.min.js"></script>
+    <script src="{{ site.theme.link }}/dist/archive.min.js"></script>
+{% endblock %}

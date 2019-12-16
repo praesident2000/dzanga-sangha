@@ -1,0 +1,20 @@
+<div class="{{content.acf_fc_layout}}-module {% if 'facts_infos' in post._wp_page_template %} {{content.acf_fc_layout}}-module--portait{% endif %}{% if content.type %} {{content.acf_fc_layout}}-module--fluid{% endif %}">
+    {% if 'facts_infos' in post._wp_page_template %}
+        {% set zoom = 'false' %}
+    {% else %}
+        {% set zoom = 'true' %}
+    {% endif %}
+
+    <div class="image-module__image">
+        {% if content.type %}
+            {% include 'partial/image_fluid.twig' with {} %}
+        {% else %}
+            {% include 'partial/image_fit.twig' with { zoom: zoom } %}
+        {% endif %}
+    </div>
+    {% if caption %}
+        <div class="image-module__caption">
+            {{ caption }}
+        </div>
+    {% endif %}
+</div>
