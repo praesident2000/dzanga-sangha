@@ -79,6 +79,11 @@
     @media screen and (min-width: map-get($grid-breakpoints, "lg")) {
         & {
             height: 100vh;
+
+            &__wrapper {
+                max-width: 500px;
+            }
+
             &__text {
                 position: absolute;
                 right: 0;

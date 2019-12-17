@@ -3,8 +3,9 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: $spacer;
 }
 h1 {
-    font-size: $h1-font-size;
+    font-size: $h1-font-size * 0.75;
     @media screen and (min-width: map-get($grid-breakpoints, "md")) {
+        font-size: $h1-font-size;
         margin-bottom: $spacer * 2;
     }
 }

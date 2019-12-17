@@ -36,10 +36,10 @@
             {% elseif content.acf_fc_layout == 'images' %}
                 <div class="layout__container">
                     <div class="row">
-                        <div class="col-6 col-md-5 offset-md-1">
+                        <div class="col-12 col-md-5 offset-md-1">
                             {% include 'modules/image.twig' with { image: content.image_1, caption: content.caption_1 } %}
                         </div>
-                        <div class="col-6 col-md-5">
+                        <div class="col-12 col-md-5">
                             {% include 'modules/image.twig' with { image: content.image_2, caption: content.caption_2 } %}
                         </div>
                     </div>

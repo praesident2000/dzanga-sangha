@@ -96,8 +96,12 @@
                                                 <div class="contact__function">{{ contact.meta.function }}</div>
                                                 <div class="contact__street">{{ contact.meta.street }}</div>
                                                 <div class="contact__city mb-4">{{ contact.meta.zip }} {{ contact.meta.city }}</div>
-                                                <div class="contact__phone">T {{ contact.meta.phone }}</div>
-                                                <div class="contact__mail">M {{ contact.meta.mail|replace({'@':'(at)'}) }}</div>
+                                                {% if contact.meta.phone %}
+                                                    <div class="contact__phone">T {{ contact.meta.phone }}</div>
+                                                {% endif %}
+                                                {% if contact.meta.mail %}
+                                                    <div class="contact__mail">M {{ contact.meta.mail|replace({'@':'(at)'}) }}</div>
+                                                {% endif %}
                                             </address>
                                         </div>
                                     </div>

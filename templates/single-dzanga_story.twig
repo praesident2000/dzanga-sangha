@@ -9,7 +9,7 @@
                 {% include 'partial/image_fit.twig' with { } %}
             </div>
             <div class="story-header__meta col-md-7 offset-md-1 col-lg-5 offset-lg-2 offset-xl-3">
-                <div class="story-header__kicker"><span>{{post.type.labels.singular_name}}</span> {{ translations.topic }}</div>
+                <div class="story-header__kicker"><span>{{post.type.labels.singular_name}}</span> {{ post.category }}</div>
                 <h2 class="story-header__title">{{ meta.title }}</h2>
                 <div class="story-header__intro">{{ meta.intro }}</div>
                 <div class="story-header__authors">

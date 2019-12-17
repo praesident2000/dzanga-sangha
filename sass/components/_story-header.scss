@@ -97,10 +97,17 @@
     }
 
     &__title {
-        font-size: 50px;
+        font-size: 36px;
     }
 
     &__authors {
         padding-top: $spacer * 1.75;
+    }
+
+    @media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+        &__title {
+            font-size: 46px;
+            max-width: 85%;
+        }
     }
 }
