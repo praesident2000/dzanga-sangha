@@ -301,7 +301,7 @@ class StarterSite extends Timber\Site {
 
 	public function deregister_scripts()
     {
-        wp_deregister_script( 'jquery' );
+        // wp_deregister_script( 'jquery' );
 
         // We do not use widgets. Deregister react and react-dom from the real-media-library plugin.
         wp_deregister_script( 'react' );
