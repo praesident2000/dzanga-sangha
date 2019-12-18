@@ -1,4 +1,56 @@
 .booking {
+
+    .wpsbc-container {
+        visibility: visible;
+    }
+    
+    .wpsbc-container .wpsbc-calendars .wpsbc-calendar {
+        border: none;
+        background: darken($elefant, 5%);
+    }
+
+    .wpsbc-container .wpsbc-calendars .wpsbc-calendar .wpsbc-calendar-header {
+        background: transparent;
+    }
+
+    .wpsbc-container .wpsbc-calendars .wpsbc-calendar .wpsbc-calendar-header .wpsbc-select-container select {
+        border-color: $leaf;
+        background: $elefant;
+        color: $leaf;
+    }
+
+    .wpsbc-container .wpsbc-calendars .wpsbc-calendar .wpsbc-calendar-header .wpsbc-calendar-header-navigation .wpsbc-next, .wpsbc-container .wpsbc-calendars .wpsbc-calendar .wpsbc-calendar-header .wpsbc-calendar-header-navigation .wpsbc-prev {
+        background: $leaf;
+        color: darken($elefant, 5%);
+    }
+
+    .wpsbc-container .wpsbc-calendars .wpsbc-calendar .wpsbc-calendar-header .wpsbc-calendar-header-navigation .wpsbc-next .wpsbc-arrow {
+        border-color: transparent transparent transparent darken($elefant, 5%);
+    }
+    .wpsbc-container .wpsbc-calendars .wpsbc-calendar .wpsbc-calendar-header .wpsbc-calendar-header-navigation .wpsbc-prev .wpsbc-arrow {
+        border-color: transparent darken($elefant, 5%) transparent transparent;
+    }
+
+    .wpsbc-container .wpsbc-calendars .wpsbc-calendar table tr td .wpsbc-date.wpsbc-gap {
+        background: $elefant;
+    } 
+
+    .wpsbc-container.wpsbc-calendar-1 .wpsbc-legend-item-icon-2 div:first-of-type {
+        background-color: rgba($grass,0.8);
+    }
+
+    .wpsbc-container.wpsbc-calendar-1 .wpsbc-legend-item-icon-2 div:first-of-type {
+        background-color: rgba($pepper,0.4);
+    }
+
+    .wpsbc-container .wpsbc-overlay {
+        background: rgba($elefant,0.6);
+    }
+
+    .wpsbc-overlay-spinner>div {
+        background-color: rgba($leaf,0.8);
+    }
+
     .sbc-title {
         text-align: center;
         font-size: 22px;

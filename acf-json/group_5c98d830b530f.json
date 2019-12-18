@@ -2571,11 +2571,12 @@
                                 "class": "",
                                 "id": ""
                             },
+                            "wpml_cf_preferences": 0,
                             "default_value": "",
                             "placeholder": "",
                             "prepend": "",
                             "append": "",
-                            "maxlength": 20
+                            "maxlength": 250
                         }
                     ],
                     "min": "",
@@ -3591,5 +3592,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1563262885
+    "modified": 1576582333
 }
