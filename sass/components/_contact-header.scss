@@ -1,6 +1,6 @@
 .contact-header {
 
-  padding-top: $global-layout-spacer-huge;
+  padding-top: $global-layout-spacer;
   padding-bottom: $global-layout-spacer-large;
 
   @media screen and (min-width: map-get($grid-breakpoints, "lg")) {

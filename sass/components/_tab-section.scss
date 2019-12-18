@@ -2,14 +2,23 @@
 
 	&__buttons {
 		display: flex;
+		flex-wrap: wrap;
 		list-style-type: none;
 		padding-left: 0;
+
+		& > .nav-item {
+			width: 100%;
+
+			@media screen and (min-width: map-get($grid-breakpoints, "md")) {
+				width: auto;
+			}
+		}
 	}
 
 	&__button {
 		color: $grass;
 		font-size: $font-size-lg;
-		padding: $spacer/2 $spacer;
+		padding: $spacer * 0.25 $spacer;
 		display: inline-block;
 		transition: 450ms ease-in-out;
 		cursor: pointer;
@@ -21,6 +30,10 @@
 		&.active {
 			color: $leaf;
 			font-weight: bold;
+		}
+
+		@media screen and (min-width: map-get($grid-breakpoints, "md")) {
+			padding: $spacer * 0.5 $spacer;
 		}
 	}
 

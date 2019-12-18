@@ -1,45 +1,35 @@
 .contact {
 
-  &__address {
-    display: inline-block;
-    font-style: normal;
-  }
+	&__address {
+		display: inline-block;
+		font-style: normal;
+	}
 
-  &__image {
-    display: inline-block;
-    border-radius: 100%;
-    overflow: hidden;
-    width: 110px;
-    height: 110px;
-    margin-bottom: $global-layout-spacer;
-    margin-right: $global-layout-spacer;
-    vertical-align: top;
+	&__image {
+		display: inline-block;
+		border-radius: 100%;
+		overflow: hidden;
+		width: 110px;
+		height: 110px;
+		margin-bottom: $global-layout-spacer;
+		margin-right: $global-layout-spacer;
+		vertical-align: top;
 
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
+		img {
+		width: 100%;
+		height: auto;
+		}
+	}
 
-  &-form__intro {
-    margin-bottom: $spacer*2;
-  }
+	&-form__intro {
+		margin-bottom: $spacer*3.5;
+	}
 
-  &__name {
-    font-weight: bold;
-  }
+	&__name {
+		font-weight: bold;
+	}
 
-  &__meta {
-
-    @media screen and (max-width: map-get($grid-breakpoints, "md")) {
-      order: 1;
-      margin-bottom: $spacer*2;
-    }
-  }
-
-  &__form {
-    @media screen and (max-width: map-get($grid-breakpoints, "md")) {
-      order: 2;
-    }
-  }
+	&__meta {
+		margin-bottom: $spacer*3.5;
+	}
 }
