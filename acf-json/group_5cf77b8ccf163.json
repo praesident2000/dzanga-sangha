@@ -93,6 +93,26 @@
                     "prepend": "",
                     "append": "",
                     "maxlength": 30
+                },
+                {
+                    "key": "field_5dfa241dc9b57",
+                    "label": "Newsletter Disclaimer",
+                    "name": "newsletter_text",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 0,
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 0,
+                    "delay": 0
                 }
             ]
         },
@@ -171,6 +191,26 @@
                     "prepend": "",
                     "append": "",
                     "maxlength": 30
+                },
+                {
+                    "key": "field_5dfa27338a7c0",
+                    "label": "Newsletter Disclaimer",
+                    "name": "newsletter_text_fr",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 0,
+                    "delay": 0,
+                    "wpml_cf_preferences": 0
                 }
             ]
         }
@@ -192,5 +232,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1563361037
+    "modified": 1576675160
 }
