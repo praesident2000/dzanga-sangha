@@ -109,10 +109,16 @@ $('.nav-main__mobile-toggler').on('click', function(){
     $(this).toggleClass('is-active');
 });
 
-$('.mobile-menu .menu-item-has-children a.main-menu__link').on('click', function() {
-    if( !$(this).parent().hasClass('touched')) {
+$('.mobile-menu .menu-item-has-children a.main-menu__link .sub-toggler').on('click', function(e) {
+    if( !$(this).parent().parent().hasClass('touched')) {
+        e.preventDefault();
         $('.mobile-menu .main-menu__item').removeClass('touched');
-        $(this).parent().addClass('touched');
+        $(this).parent().parent().addClass('touched');
+        return false;
+    }
+    else {
+        e.preventDefault();
+        $('.mobile-menu .main-menu__item').removeClass('touched');
         return false;
     }
 });

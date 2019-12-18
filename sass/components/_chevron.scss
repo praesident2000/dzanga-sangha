@@ -9,7 +9,7 @@ $chevron-width: 4px;
     border-radius: $chevron-width;
     margin-left: 20px;
     transform: rotateZ(135deg);
-    transform-origin: 4px 4px;
+    transform-origin: 5px 5px;
     transition: transform 350ms;
 
     &:before {

@@ -6,7 +6,7 @@
                 <a class="main-menu__link" target="{{ item.target }}" href="{{ item.link }}">
                     {{ item.title }}
                     {% if item.get_children %}
-                        <i class="icon chevron"></i>
+                        <i class="icon chevron sub-toggler"></i>
                     {% endif %}
                 </a>
                 {% include "menu.twig" with {'menu': item.get_children} %}

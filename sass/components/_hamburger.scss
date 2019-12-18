@@ -6,17 +6,28 @@
     cursor: pointer;
     transition-timing-function: linear;
     transition-duration: .15s;
-    transition-property: opacity,filter;
+    transition-property: opacity,filter,transform;
     text-transform: none;
     color: inherit;
     border: 0;
     background-color: transparent;
+
+    &:hover {
+        transform: scale(1.15);
+
+        .hamburger__inner, .hamburger__inner:after, .hamburger__inner:before {
+            background-color: $leaf;
+        }
+
+    }
+
     &__box {
         position: relative;
         display: inline-block;
         width: 30px;
         height: 24px;
     }
+
     &__inner, &__inner:after, &__inner:before {
         position: absolute;
         width: 30px;
