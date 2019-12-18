@@ -1,22 +1,22 @@
 {% from 'macros/icon.twig' import icon %}
 <ul class="share {{ class }}">
     <li class="share__item">
-        <a href="" class="share__link">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=%20{{ post.link }}" class="share__link" v>
             {{ icon('fa-facebook-f') }}
         </a>
     </li>
     <li class="share__item">
-        <a href="" class="share__link">
+        <a href="https://twitter.com/share?status={{ post.link }}" class="share__link" target="_blank">
             {{ icon('fa-twitter') }}
         </a>
     </li>
     <li class="share__item">
-        <a href="" class="share__link">
+        <a href="https://wa.me/?text={{ post.link }}" class="share__link" target="_blank">
             {{ icon('fa-whatsapp') }}
         </a>
     </li>
     <li class="share__item">
-        <a href="" class="share__link">
+        <a href="mailto:?subject=&body={{ post.link }}" class="share__link">
             {{ icon('fa-envelope') }}
         </a>
     </li>
