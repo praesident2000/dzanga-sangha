@@ -14,7 +14,26 @@
         border-top: 1px solid #a5a5a5;
         margin-bottom: $spacer * 2;
     }
+
+    .logo {
+        width: auto;
+        padding: 0;
+
+        &__image {
+            max-height: 60px;
+        }
+    }
+
     @media screen and (min-width: map-get($grid-breakpoints, "lg")) {
         margin-top: $global-layout-spacer-large;
+
+        .logo {
+            width: auto;
+            padding: 0 1rem;
+
+            &__image {
+                max-height: 85px;
+            }
+        }
     }
 }
