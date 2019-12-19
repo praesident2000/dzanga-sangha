@@ -47,6 +47,6 @@
 {% endblock %}
 {% block scripts %}
     {{ parent() }}
-    <script src="{{ site.theme.link }}/dist/search.min.js"></script>
-    <script src="{{ site.theme.link }}/dist/archive.min.js"></script>
+    <script type="deferjs" src="{{ site.theme.link }}/dist/search.min.js"></script>
+    <script type="deferjs" src="{{ site.theme.link }}/dist/archive.min.js"></script>
 {% endblock %}
