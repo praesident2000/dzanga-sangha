@@ -1,5 +1,4 @@
 // VENDOR
-@import "../node_modules/normalize.scss/normalize";
 @import "../node_modules/bootstrap/scss/functions";
 @import "settings/variables";
 
@@ -23,25 +22,6 @@
 // SETTINGS
 @import "settings/global";
 
-// GENERIC
-@import "generic/fonts";
-
-// ELEMENTS
-@import "elements/root";
-@import "elements/links";
-@import "elements/text";
-@import "elements/hr";
-@import "elements/headings";
-@import "elements/inputs";
-
-// OBJECTS
-@import "objects/image-fit";
-@import "objects/image-fluid";
-@import "objects/layout";
-@import "objects/modal";
-@import "objects/form";
-@import "objects/map";
-
 // COMPONENTS
 @import "components/nav-bar";
 @import "components/main-menu";
@@ -61,13 +41,8 @@
 @import "components/plus";
 @import "components/close";
 @import "components/tease";
-@import "components/story-header";
-@import "components/page-header";
-@import "components/news-header";
 @import "components/blobs";
 @import "components/timeline";
-@import "components/image-slider";
-@import "components/story-slider";
 @import "components/testimonials";
 @import "components/related-stories";
 @import "components/related-links";
@@ -80,25 +55,20 @@
 @import "components/chevron";
 @import "components/magnifier";
 @import "components/site-info";
-@import "components/context-slider";
 @import "components/newsletter";
 @import "components/share";
 @import "components/accordion";
 @import "components/video";
 @import "components/partners";
-@import "components/partner-header";
 @import "components/tease-search";
 @import "components/search";
 @import "components/asset";
-@import "components/contact-header";
 @import "components/contact";
 @import "components/tab-section";
 @import "components/further-links";
 @import "components/maintenance";
 @import "components/filter";
-@import "components/scrolldown";
 @import "components/progress";
-@import "components/cookieconsent";
 
 // VENDOR
 @import "vendor/sbc-calendar";
