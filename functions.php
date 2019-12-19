@@ -306,6 +306,7 @@ class StarterSite extends Timber\Site {
 
         if(!is_page($slug)){
             wp_deregister_script( 'jquery' );
+            wp_dequeue_style( 'wpsbc-style' );
         };
 
         // We do not use widgets. Deregister react and react-dom from the real-media-library plugin.
@@ -321,6 +322,7 @@ class StarterSite extends Timber\Site {
 		// Remove the unused Gutenberg styles
 	    wp_dequeue_style( 'wp-block-library' );
 	    wp_deregister_style( 'wp-block-library' );
+        wp_deregister_style( 'dashicons' ); 
 	}
 }
 
