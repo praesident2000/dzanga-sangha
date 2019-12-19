@@ -301,7 +301,12 @@ class StarterSite extends Timber\Site {
 
 	public function deregister_scripts()
     {
-        // wp_deregister_script( 'jquery' );
+        $calendar_page = new TimberPost(get_field('calendar_page', 'option'));
+        $slug = $calendar_page->post_name;
+
+        if(!is_page($slug)){
+            wp_deregister_script( 'jquery' );
+        };
 
         // We do not use widgets. Deregister react and react-dom from the real-media-library plugin.
         wp_deregister_script( 'react' );
@@ -310,13 +315,13 @@ class StarterSite extends Timber\Site {
         // No Embeds by default
         wp_deregister_script( 'wp-embed' );
     }
+
 	public function wps_deregister_styles() {
 
 		// Remove the unused Gutenberg styles
 	    wp_dequeue_style( 'wp-block-library' );
 	    wp_deregister_style( 'wp-block-library' );
 	}
-
 }
 
 new StarterSite();

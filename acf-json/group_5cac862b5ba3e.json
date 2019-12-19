@@ -145,6 +145,29 @@
                     ]
                 }
             ]
+        },
+        {
+            "key": "field_5dfb7397efb74",
+            "label": "Calendar Page",
+            "name": "calendar_page",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "id",
+            "wpml_cf_preferences": 0,
+            "ui": 1
         }
     ],
     "location": [
@@ -164,5 +187,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1561018020
+    "modified": 1576760276
 }
