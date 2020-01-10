@@ -321,8 +321,10 @@ class StarterSite extends Timber\Site {
 
 		// Remove the unused Gutenberg styles
 	    wp_dequeue_style( 'wp-block-library' );
-	    wp_deregister_style( 'wp-block-library' );
-        wp_deregister_style( 'dashicons' ); 
+        wp_deregister_style( 'wp-block-library' );
+        if ( !is_user_logged_in() ) {
+            wp_deregister_style( 'dashicons' );
+        } 
 	}
 }
 
