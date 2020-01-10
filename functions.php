@@ -410,3 +410,36 @@ function admin_style() {
         // wp_enqueue_script('admin-scripts', get_template_directory_uri().'/dist/admin.min.js', array('acf-input'));
     }
 }
+
+add_action('wp_ajax_storyfilter', 'story_filter_function'); // wp_ajax_{ACTION HERE} 
+add_action('wp_ajax_nopriv_storyfilter', 'story_filter_function');
+ 
+function story_filter_function(){
+	$args = array(
+		'orderby' => 'date', // we will sort posts by date
+		'order'	=> $_POST['date'] // ASC or DESC
+	);
+ 
+	// for taxonomies / categories
+	if( isset( $_POST['categoryfilter'] ) )
+		$args['tax_query'] = array(
+			array(
+				'taxonomy' => 'category',
+				'field' => 'id',
+				'terms' => $_POST['categoryfilter']
+			)
+		);
+ 
+	$query = new WP_Query( $args );
+ 
+	if( $query->have_posts() ) :
+		while( $query->have_posts() ): $query->the_post();
+			echo '<h2>' . $query->post->post_title . '</h2>';
+		endwhile;
+		wp_reset_postdata();
+	else :
+		echo 'No posts found';
+	endif;
+ 
+	die();
+}
