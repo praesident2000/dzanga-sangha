@@ -5,6 +5,10 @@
 		.modal-close {
 			background: $grass;
 		}
+		.modal-content {
+			background-color: $grass;
+			border: none;
+		}
 		.modal-body {
 			padding-top: $nav-bar-height + 16px;
 			padding-left: $spacer * 0.5;

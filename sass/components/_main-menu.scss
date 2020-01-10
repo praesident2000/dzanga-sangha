@@ -24,13 +24,13 @@
         &:hover .main-menu__link, &.touched .main-menu__link {
             color: $leaf;
         }
+        &:hover .chevron {
+            transform: rotateZ(225deg);
+        }
         @media screen and (min-width: map-get($grid-breakpoints, "md")) {
             font-size: 36px;
             text-align: left;
         }
-    }
-    &__link {
-
     }
     .chevron {
         display: inline-block;
@@ -40,7 +40,15 @@
     .main-menu {
     
         &__item {
-    
+
+            &:hover .main-menu__link{
+                color: currentColor;
+            }
+
+            &.touched .main-menu__link {
+                color: $leaf;
+            }
+
             & .menu__list {
                 max-height: 0px;
                 overflow: hidden;
@@ -55,6 +63,14 @@
                 font-weight: normal;
                 padding-top: $spacer * 0.5;
                 padding-bottom: $spacer * 0.5;
+            }
+
+            &:hover .chevron {
+                transform: rotateZ(135deg);
+            }
+
+            &.touched .chevron {
+                transform: rotateZ(225deg);
             }
         }
     }

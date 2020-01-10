@@ -28,10 +28,6 @@ $chevron-width: 4px;
         }
     }
 
-    .main-menu__item:hover &, .main-menu__item.touched & {
-        transform: rotateZ(225deg);
-    }
-
     &--small {
         border-radius: 0;
         height: 12px;

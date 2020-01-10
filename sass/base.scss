@@ -14,6 +14,7 @@
 
 @import "../node_modules/flickity/css/flickity";
 @import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/modal";
 
 // SETTINGS
 @import "settings/global";
@@ -59,7 +60,6 @@
 @import "components/context-slider";
 @import "components/image-slider";
 @import "components/story-slider";
-@import "components/contact";
 @import "components/further-links";
 @import "components/filter";
 @import "components/scrolldown";

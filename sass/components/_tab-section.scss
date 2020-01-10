@@ -57,10 +57,24 @@
 			opacity: 0;
 		}
 	}
-	input {
+	input, textarea {
+		border-radius: 0;
+
+		&::placeholder {
+			color: $white;
+		}
+
 		&[type="text"], &[type="email"] {
-			border-bottom: 1px solid;
+			border-bottom: 2px solid;
 			font-size: $font-size-base;
 		}
+	}
+
+	textarea {
+		background: transparent;
+		border: none;
+		border-bottom: 2px solid;
+		border-top: 2px solid;
+		color: $white;
 	}
 }
