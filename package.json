@@ -25,7 +25,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-uglifycss": "^1.1.0",
     "infinite-scroll": "^3.0.5",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "js-cookie": "^2.2.1",
     "lazyframe": "^1.1.6",
     "lozad": "^1.14.0",
